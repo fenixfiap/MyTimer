@@ -1,0 +1,303 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF38EC68178F50A000C1A44B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF38EC67178F50A000C1A44B /* UIKit.framework */; };
+		AF38EC6A178F50A000C1A44B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF38EC69178F50A000C1A44B /* Foundation.framework */; };
+		AF38EC6C178F50A000C1A44B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF38EC6B178F50A000C1A44B /* CoreGraphics.framework */; };
+		AF38EC72178F50A000C1A44B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF38EC70178F50A000C1A44B /* InfoPlist.strings */; };
+		AF38EC74178F50A000C1A44B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AF38EC73178F50A000C1A44B /* main.m */; };
+		AF38EC78178F50A000C1A44B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF38EC77178F50A000C1A44B /* AppDelegate.m */; };
+		AF38EC7A178F50A000C1A44B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AF38EC79178F50A000C1A44B /* Default.png */; };
+		AF38EC7C178F50A000C1A44B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF38EC7B178F50A000C1A44B /* Default@2x.png */; };
+		AF38EC7E178F50A000C1A44B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF38EC7D178F50A000C1A44B /* Default-568h@2x.png */; };
+		AF38EC81178F50A000C1A44B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF38EC7F178F50A000C1A44B /* MainStoryboard.storyboard */; };
+		AF38EC84178F50A000C1A44B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF38EC83178F50A000C1A44B /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AF38EC64178F50A000C1A44B /* MyTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF38EC67178F50A000C1A44B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AF38EC69178F50A000C1A44B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AF38EC6B178F50A000C1A44B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AF38EC6F178F50A000C1A44B /* MyTimer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MyTimer-Info.plist"; sourceTree = "<group>"; };
+		AF38EC71178F50A000C1A44B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AF38EC73178F50A000C1A44B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AF38EC75178F50A000C1A44B /* MyTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyTimer-Prefix.pch"; sourceTree = "<group>"; };
+		AF38EC76178F50A000C1A44B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AF38EC77178F50A000C1A44B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AF38EC79178F50A000C1A44B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AF38EC7B178F50A000C1A44B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		AF38EC7D178F50A000C1A44B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AF38EC80178F50A000C1A44B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		AF38EC82178F50A000C1A44B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		AF38EC83178F50A000C1A44B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF38EC61178F50A000C1A44B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF38EC68178F50A000C1A44B /* UIKit.framework in Frameworks */,
+				AF38EC6A178F50A000C1A44B /* Foundation.framework in Frameworks */,
+				AF38EC6C178F50A000C1A44B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF38EC5B178F50A000C1A44B = {
+			isa = PBXGroup;
+			children = (
+				AF38EC6D178F50A000C1A44B /* MyTimer */,
+				AF38EC66178F50A000C1A44B /* Frameworks */,
+				AF38EC65178F50A000C1A44B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF38EC65178F50A000C1A44B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF38EC64178F50A000C1A44B /* MyTimer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF38EC66178F50A000C1A44B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF38EC67178F50A000C1A44B /* UIKit.framework */,
+				AF38EC69178F50A000C1A44B /* Foundation.framework */,
+				AF38EC6B178F50A000C1A44B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF38EC6D178F50A000C1A44B /* MyTimer */ = {
+			isa = PBXGroup;
+			children = (
+				AF38EC76178F50A000C1A44B /* AppDelegate.h */,
+				AF38EC77178F50A000C1A44B /* AppDelegate.m */,
+				AF38EC7F178F50A000C1A44B /* MainStoryboard.storyboard */,
+				AF38EC82178F50A000C1A44B /* ViewController.h */,
+				AF38EC83178F50A000C1A44B /* ViewController.m */,
+				AF38EC6E178F50A000C1A44B /* Supporting Files */,
+			);
+			path = MyTimer;
+			sourceTree = "<group>";
+		};
+		AF38EC6E178F50A000C1A44B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF38EC6F178F50A000C1A44B /* MyTimer-Info.plist */,
+				AF38EC70178F50A000C1A44B /* InfoPlist.strings */,
+				AF38EC73178F50A000C1A44B /* main.m */,
+				AF38EC75178F50A000C1A44B /* MyTimer-Prefix.pch */,
+				AF38EC79178F50A000C1A44B /* Default.png */,
+				AF38EC7B178F50A000C1A44B /* Default@2x.png */,
+				AF38EC7D178F50A000C1A44B /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF38EC63178F50A000C1A44B /* MyTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF38EC87178F50A000C1A44B /* Build configuration list for PBXNativeTarget "MyTimer" */;
+			buildPhases = (
+				AF38EC60178F50A000C1A44B /* Sources */,
+				AF38EC61178F50A000C1A44B /* Frameworks */,
+				AF38EC62178F50A000C1A44B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyTimer;
+			productName = MyTimer;
+			productReference = AF38EC64178F50A000C1A44B /* MyTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF38EC5C178F50A000C1A44B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Gabriel Moraes";
+			};
+			buildConfigurationList = AF38EC5F178F50A000C1A44B /* Build configuration list for PBXProject "MyTimer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AF38EC5B178F50A000C1A44B;
+			productRefGroup = AF38EC65178F50A000C1A44B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF38EC63178F50A000C1A44B /* MyTimer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF38EC62178F50A000C1A44B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF38EC72178F50A000C1A44B /* InfoPlist.strings in Resources */,
+				AF38EC7A178F50A000C1A44B /* Default.png in Resources */,
+				AF38EC7C178F50A000C1A44B /* Default@2x.png in Resources */,
+				AF38EC7E178F50A000C1A44B /* Default-568h@2x.png in Resources */,
+				AF38EC81178F50A000C1A44B /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF38EC60178F50A000C1A44B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF38EC74178F50A000C1A44B /* main.m in Sources */,
+				AF38EC78178F50A000C1A44B /* AppDelegate.m in Sources */,
+				AF38EC84178F50A000C1A44B /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AF38EC70178F50A000C1A44B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF38EC71178F50A000C1A44B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AF38EC7F178F50A000C1A44B /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF38EC80178F50A000C1A44B /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF38EC85178F50A000C1A44B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AF38EC86178F50A000C1A44B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF38EC88178F50A000C1A44B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyTimer/MyTimer-Prefix.pch";
+				INFOPLIST_FILE = "MyTimer/MyTimer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AF38EC89178F50A000C1A44B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MyTimer/MyTimer-Prefix.pch";
+				INFOPLIST_FILE = "MyTimer/MyTimer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF38EC5F178F50A000C1A44B /* Build configuration list for PBXProject "MyTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF38EC85178F50A000C1A44B /* Debug */,
+				AF38EC86178F50A000C1A44B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF38EC87178F50A000C1A44B /* Build configuration list for PBXNativeTarget "MyTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF38EC88178F50A000C1A44B /* Debug */,
+				AF38EC89178F50A000C1A44B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF38EC5C178F50A000C1A44B /* Project object */;
+}
