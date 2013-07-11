@@ -1,4 +1,0 @@
-MyTimer
-=======
-
-Agendamento Interativo
