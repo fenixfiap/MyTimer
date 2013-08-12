@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "KeyboardToolbar.h"
 
-@interface AgendamentoViewController : UIViewController
+@interface AgendamentoViewController : UIViewController <UIActionSheetDelegate>
 {
     KeyboardToolbar* keyboard;
 }
 
 @property (retain, nonatomic) IBOutlet UIScrollView *svTela;
+
+- (IBAction)btnSair:(UIBarButtonItem *)sender;
 
 @end

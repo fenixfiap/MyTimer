@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "KeyboardToolbar.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+#import "JSONKit.h"
 
 @interface LoginViewController : UIViewController
 {
