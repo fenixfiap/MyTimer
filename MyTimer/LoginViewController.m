@@ -26,21 +26,13 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)dealloc {
-    [keyboard release];
-    [_txtLogin release];
-    [_txtSenha release];
-    [_svTela release];
-    [super dealloc];
-}
-
 - (IBAction)autentica:(UIButton *)sender {
     if ([self validaCampos]) {
         NSURL *url = [NSURL URLWithString: @"http://localhost:8080/mt-web/ws/mobile/login"];
         
         ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
         request.shouldPresentCredentialsBeforeChallenge = YES;
-        [request addRequestHeader:@"Authorization" value:@"BASIC am9zZTpqb3Nl"];
+        [request addBasicAuthenticationHeaderWithUsername:self.txtLogin.text andPassword:self.txtSenha.text];
         [request setRequestMethod:@"POST"];
         [request setShowAccurateProgress:YES];
         [request setUploadProgressDelegate:self];
@@ -77,10 +69,10 @@
 //    [CarregandoTela removeFromSuperview];
 //    [self.view endEditing:YES];
 //    
-//    NSDictionary *dicRetorno = [[NSDictionary alloc] initWithDictionary:((NSDictionary*)[request.responseData objectFromJSONData])];
-//    
-//    NSUserDefaults *pref =  [NSUserDefaults standardUserDefaults];
-//    
+    NSDictionary *dicRetorno = [[NSDictionary alloc] initWithDictionary:((NSDictionary*)[request.responseData objectFromJSONData])];
+//
+    NSUserDefaults *pref =  [NSUserDefaults standardUserDefaults];
+//
 //    [pref setObject:[dicRetorno objectForKey:@"tokenAcesso" ] forKey:USER_DEFAULT_TOKEN_USUARIO ];
 //    
 //    [pref setObject:[[dicRetorno objectForKey:@"usuario" ] valueForKey:@"id"] forKey:USER_DEFAULT_ID_USUARIO];
@@ -122,7 +114,6 @@
         return NO;
     }
     else {
-        [vcMensagemRetorno release];
         return YES;
     }
 }

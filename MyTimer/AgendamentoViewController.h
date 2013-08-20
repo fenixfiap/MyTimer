@@ -14,7 +14,7 @@
     KeyboardToolbar* keyboard;
 }
 
-@property (retain, nonatomic) IBOutlet UIScrollView *svTela;
+@property (strong, nonatomic) IBOutlet UIScrollView *svTela;
 
 - (IBAction)btnSair:(UIBarButtonItem *)sender;
 

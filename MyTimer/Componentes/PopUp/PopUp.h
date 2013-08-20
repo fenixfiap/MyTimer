@@ -30,11 +30,11 @@
 
 @interface PopUp : UIView
 {
-    id<PopUpDelegate> delegate;
+    id<PopUpDelegate> __weak delegate;
 }
 
-@property (nonatomic, retain) UITextView *txtMensagemExibicao;
-@property(nonatomic,assign)id <PopUpDelegate> delegate;
+@property (nonatomic, strong) UITextView *txtMensagemExibicao;
+@property(nonatomic,weak)id <PopUpDelegate> delegate;
 
 -(void)setImgIcone:(NSString *)vcTipoImagem;
 -(void)setTipoAlert:(NSString *)TipoAlert comTitulo:(NSString *)Titulo;

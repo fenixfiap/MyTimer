@@ -17,6 +17,6 @@
     MKMapView *_mapView;
 }
 
-@property (nonatomic, retain) MKMapView *mapView;
+@property (nonatomic, strong) MKMapView *mapView;
 
 @end

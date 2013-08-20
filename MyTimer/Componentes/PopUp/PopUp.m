@@ -19,7 +19,6 @@
         vwTransparencia.backgroundColor = [UIColor colorWithRed:14/255.0f green:74/255.0f blue:128/255.0f alpha:1];
         vwTransparencia.alpha = 0.6;
         [self addSubview:vwTransparencia];
-        [vwTransparencia release];
         
         CGPoint ptCentralImgBackground = self.center;
         UIImage *imgBackground = [UIImage imageNamed:@"HDC_Box_PopUp.png"];
@@ -27,7 +26,6 @@
         imgviewBackground.center = ptCentralImgBackground;
         imgviewBackground.image = imgBackground;
         [self insertSubview:imgviewBackground aboveSubview:vwTransparencia];
-        [imgviewBackground release];
         
         CGPoint ptCentralLabel = self.center;
         ptCentralLabel.y =  ptCentralLabel.y + 15;
@@ -108,7 +106,6 @@
     imgviewIcone.image = imgIcone ;
     imgviewIcone.center = ptCentralImgIcone;
     [self insertSubview:imgviewIcone aboveSubview:self];
-    [imgviewIcone release];
 
 }
 
@@ -130,8 +127,4 @@
     [self removeFromSuperview];
 }
 
-- (void)dealloc {
-    [_txtMensagemExibicao release];
-    [super dealloc];
-}
 @end

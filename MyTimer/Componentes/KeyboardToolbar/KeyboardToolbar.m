@@ -42,10 +42,6 @@
                                                      name:UITextViewTextDidBeginEditingNotification
                                                    object:nil];
         
-        [btAnterior release];
-        [btProximo release];
-        [btEspacamento release];
-        [btEscondeTeclado release];
         
         
     }
@@ -155,9 +151,7 @@
 }
 
 - (void)dealloc {
-    [svTela release];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [super dealloc];
 }
 
 @end

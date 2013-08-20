@@ -17,6 +17,6 @@
     CGSize tamanhoOriginal;
 }
 
-@property(nonatomic,retain)UIScrollView * svTela;
+@property(nonatomic,strong)UIScrollView * svTela;
 
 @end

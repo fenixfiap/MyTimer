@@ -15,6 +15,6 @@
         UIButton *_accessory;
 }
 
-@property (nonatomic, retain) UIButton *accessory;
+@property (nonatomic, strong) UIButton *accessory;
 
 @end

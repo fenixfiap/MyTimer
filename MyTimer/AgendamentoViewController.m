@@ -20,10 +20,6 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)dealloc {
-    [_svTela release];
-    [super dealloc];
-}
 - (IBAction)btnSair:(UIBarButtonItem *)sender {
     UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                   initWithTitle:@"Deseja realmente sair?"

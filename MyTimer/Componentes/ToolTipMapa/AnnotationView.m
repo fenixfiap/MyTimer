@@ -25,7 +25,6 @@
         UIImageView *vwImgBackground = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height)];
         vwImgBackground.image = imgBackground;
         [self addSubview:vwImgBackground];
-        [vwImgBackground release];
         
         UIActivityIndicatorView *aiCarregandoImagem = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         aiCarregandoImagem.frame = CGRectMake(15, 30, 40, 40);
@@ -45,14 +44,12 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
                     [aiCarregandoImagem removeFromSuperview];
-                    [aiCarregandoImagem release];
                     vwImgToolTip.image = img;
                     [self addSubview:vwImgToolTip];
                     
                 });
             });
         
-        [vwImgToolTip release];
         
         UILabel *lblTitulo = [[UILabel alloc] initWithFrame:CGRectMake(65, 20, 155, 20)];
         lblTitulo.font = [UIFont boldSystemFontOfSize:13];
@@ -60,7 +57,6 @@
         lblTitulo.textColor = [UIColor whiteColor];
         lblTitulo.text = self.annotation.title;
         [self addSubview:lblTitulo];
-        [lblTitulo release];
         
         UILabel *lblDescricao = [[UILabel alloc] initWithFrame:CGRectMake(65, 30, 155, 60)];
         lblDescricao.numberOfLines = 3;
@@ -69,7 +65,6 @@
         lblDescricao.textColor = [UIColor whiteColor];
         lblDescricao.text = self.annotation.subtitle;
         [self addSubview:lblDescricao];
-        [lblDescricao release];
 
 	}
 	return self;
