@@ -11,14 +11,18 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "JSONKit.h"
+#import "CustomActivityIndicatorView.h"
+#import "Constantes.h"
 
 @interface LoginViewController : UIViewController
 {
-    KeyboardToolbar* keyboard;
+    @private KeyboardToolbar* keyboard;
+    @private CustomActivityIndicatorView* carregandoTela;
 }
 @property (retain, nonatomic) IBOutlet UITextField *txtLogin;
 @property (retain, nonatomic) IBOutlet UITextField *txtSenha;
 @property (retain, nonatomic) IBOutlet UIScrollView *svTela;
+
 - (IBAction)autentica:(UIButton *)sender;
 
 @end

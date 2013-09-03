@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="xsj-TO-NEv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -9,27 +9,27 @@
             <objects>
                 <viewController id="2" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="fnN-Ly-AEj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" minimumFontSize="17" clearButtonMode="whileEditing" id="SfC-jo-Zkr">
-                                        <rect key="frame" x="20" y="173" width="280" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jose" borderStyle="roundedRect" placeholder="Login" minimumFontSize="17" clearButtonMode="whileEditing" id="SfC-jo-Zkr">
+                                        <rect key="frame" x="20" y="247" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" clearButtonMode="whileEditing" id="38T-6L-Jq6">
-                                        <rect key="frame" x="20" y="212" width="280" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jose" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" clearButtonMode="whileEditing" id="38T-6L-Jq6">
+                                        <rect key="frame" x="20" y="300" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="naE-AF-Oev">
-                                        <rect key="frame" x="124" y="287" width="73" height="44"/>
+                                        <rect key="frame" x="113" y="407" width="95" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Entrar">
@@ -44,80 +44,110 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mt-logo.png" id="Us7-0U-gHT">
-                                        <rect key="frame" x="32" y="61" width="234" height="39"/>
+                                        <rect key="frame" x="32" y="98" width="234" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mt-clock.png" id="4R0-4I-PYS">
-                                        <rect key="frame" x="241" y="80" width="48" height="48"/>
+                                        <rect key="frame" x="241" y="124" width="48" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="ryo-9P-dbG">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <items>
+                                            <navigationItem title="Login" id="6h1-Y6-6tB"/>
+                                        </items>
+                                    </navigationBar>
                                 </subviews>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.82745098039999998" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="xee-Ms-fHn"/>
                     <connections>
                         <outlet property="svTela" destination="fnN-Ly-AEj" id="oQI-z5-blh"/>
                         <outlet property="txtLogin" destination="SfC-jo-Zkr" id="AoW-S5-K89"/>
                         <outlet property="txtSenha" destination="38T-6L-Jq6" id="PhU-zV-GDo"/>
-                        <segue destination="hT0-H6-1rY" kind="modal" identifier="sgAgendamento" modalTransitionStyle="flipHorizontal" id="t0p-dC-43a"/>
+                        <segue destination="00P-zH-sfG" kind="modal" identifier="sgLoga" modalTransitionStyle="flipHorizontal" id="gHH-LP-F5y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="579" y="133"/>
+            <point key="canvasLocation" x="620" y="-162"/>
         </scene>
-        <!--Agendamento View Controller-->
-        <scene sceneID="xjA-KJ-u3s">
+        <!--Novo View Controller-->
+        <scene sceneID="d8F-1S-iha">
             <objects>
-                <viewController id="hT0-H6-1rY" customClass="AgendamentoViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NTK-Hr-E1A">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                <viewController id="NoC-Ml-yR4" customClass="NovoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6cN-4D-Wc7">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="xSu-Bx-xpm">
-                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </scrollView>
-                            <navigationBar contentMode="scaleToFill" id="2uQ-AY-8f4">
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="uDE-Sy-YGV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Agendamento" id="4ho-2l-rfU">
-                                        <barButtonItem key="rightBarButtonItem" title="Sair" id="Mvb-kY-qeY">
+                                    <navigationItem title="Novo" id="04F-tN-jA6">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancelar" style="plain" id="0mC-mF-lnk">
                                             <connections>
-                                                <action selector="btnSair:" destination="hT0-H6-1rY" id="vKN-Dv-yOV"/>
+                                                <action selector="cancelaNovo:" destination="NoC-Ml-yR4" id="XSV-27-Bgf"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.82745098039999998" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="svTela" destination="xSu-Bx-xpm" id="rtY-cb-iZr"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="KbU-IT-ZQX"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DIh-Np-lhM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qjw-hQ-8hE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027" y="133"/>
+            <point key="canvasLocation" x="1712" y="-162"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="bJO-N7-BrI">
+        <!--Realizados View Controller-->
+        <scene sceneID="eP9-uP-TFa">
             <objects>
-                <navigationController definesPresentationContext="YES" id="xsj-TO-NEv" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nbP-5M-qco">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="2" kind="relationship" relationship="rootViewController" id="gJg-Aa-JSu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WfL-ja-RZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="00P-zH-sfG" customClass="RealizadosViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eL2-1e-an1">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eME-eB-8RG">
+                                <rect key="frame" x="0.0" y="44" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="00P-zH-sfG" id="tRV-bQ-Rha"/>
+                                    <outlet property="delegate" destination="00P-zH-sfG" id="goq-Jm-s8M"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="fe9-Uk-eEQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Agendamentos" id="9pb-Hj-wQe">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="R3I-qz-RGd">
+                                            <connections>
+                                                <segue destination="NoC-Ml-yR4" kind="modal" id="vM7-Xc-O2O"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="x0m-lN-aTw">
+                                            <connections>
+                                                <action selector="btnSair:" destination="00P-zH-sfG" id="JPv-Xc-mcx"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="d3x-1S-O0Q"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J9V-QS-xbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="165" y="133"/>
+            <point key="canvasLocation" x="1163" y="-162"/>
         </scene>
     </scenes>
     <resources>
@@ -125,13 +155,6 @@
         <image name="mt-logo.png" width="289" height="65"/>
     </resources>
     <classes>
-        <class className="AgendamentoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AgendamentoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnSair:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="svTela" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
@@ -141,10 +164,23 @@
                 <relationship kind="outlet" name="txtSenha" candidateClass="UITextField"/>
             </relationships>
         </class>
+        <class className="NovoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NovoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelaNovo:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="svTela" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="RealizadosViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RealizadosViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="btnSair:" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>

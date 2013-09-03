@@ -23,8 +23,8 @@
 
 @protocol PopUpDelegate <NSObject>
 
--(void)PopUpCancelar;
--(void)PopUpOK;
+-(void)popUpCancelar;
+-(void)popUpOK;
 
 @end
 

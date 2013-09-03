@@ -113,7 +113,7 @@
     
     if([delegate respondsToSelector:@selector(PopUpOK)])
     {
-        [delegate PopUpOK];
+        [delegate popUpOK];
     }
     [self removeFromSuperview];
 }
@@ -122,7 +122,7 @@
     
     if([delegate respondsToSelector:@selector(PopUpCancelar)])
     {
-        [delegate PopUpCancelar];
+        [delegate popUpCancelar];
     }
     [self removeFromSuperview];
 }

@@ -1,0 +1,18 @@
+//
+//  Constantes.h
+//  MyTimer
+//
+//  Created by Gabriel Moraes on 03/09/13.
+//  Copyright (c) 2013 Fenix. All rights reserved.
+//
+
+#ifndef MyTimer_Constantes_h
+#define MyTimer_Constantes_h
+
+#define ENDERECO_PORTA @":8080"
+#define ENDERECO_CAMINHO @"/mt-web/ws/mobile"
+#define ENDERECO_SERVICOS [[@"http://localhost" stringByAppendingString: ENDERECO_PORTA] stringByAppendingString: ENDERECO_CAMINHO]
+
+#define SERVICO_LOGAR [ENDERECO_SERVICOS stringByAppendingString: @"/login"]
+
+#endif

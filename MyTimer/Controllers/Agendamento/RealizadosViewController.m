@@ -1,14 +1,14 @@
 //
-//  AgendamentoViewController.m
+//  RealizadosViewController.m
 //  MyTimer
 //
-//  Created by Gabriel Moraes on 12/08/13.
+//  Created by Gabriel Moraes on 03/09/13.
 //  Copyright (c) 2013 Fenix. All rights reserved.
 //
 
-#import "AgendamentoViewController.h"
+#import "RealizadosViewController.h"
 
-@implementation AgendamentoViewController
+@implementation RealizadosViewController
 
 - (void)viewDidLoad
 {
@@ -27,7 +27,7 @@
                                   cancelButtonTitle:@"Cancelar"
                                   destructiveButtonTitle:@"Sair"
                                   otherButtonTitles: nil];
-    [actionSheet showInView:self.view];
+    [actionSheet showInView:self.view.window];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -35,4 +35,5 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
+
 @end

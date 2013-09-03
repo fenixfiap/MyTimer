@@ -1,5 +1,5 @@
 //
-//  AgendamentoViewController.h
+//  NovoViewController.h
 //  MyTimer
 //
 //  Created by Gabriel Moraes on 12/08/13.
@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "KeyboardToolbar.h"
 
-@interface AgendamentoViewController : UIViewController <UIActionSheetDelegate>
+@interface NovoViewController : UIViewController <UIActionSheetDelegate>
 {
-    KeyboardToolbar* keyboard;
+    @private KeyboardToolbar* keyboard;
 }
 
 @property (strong, nonatomic) IBOutlet UIScrollView *svTela;
 
-- (IBAction)btnSair:(UIBarButtonItem *)sender;
+- (IBAction)cancelaNovo:(UIBarButtonItem *)sender;
 
 @end

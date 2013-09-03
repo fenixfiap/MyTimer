@@ -24,7 +24,6 @@
 		AF033E5217B950D000F26D43 /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF033E3D17B950D000F26D43 /* AnnotationView.m */; };
 		AF033E5817B952A600F26D43 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF033E5717B952A500F26D43 /* MapKit.framework */; };
 		AF033E5C17B954F300F26D43 /* mt-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AF033E5B17B954F300F26D43 /* mt-logo.png */; };
-		AF033E5F17B960E600F26D43 /* AgendamentoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF033E5E17B960E500F26D43 /* AgendamentoViewController.m */; };
 		AF033E6817B963E700F26D43 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AF033E6617B963E600F26D43 /* Icon.png */; };
 		AF033E6917B963E700F26D43 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF033E6717B963E700F26D43 /* Icon@2x.png */; };
 		AF033E8D17B9882300F26D43 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF033E8C17B9882300F26D43 /* MobileCoreServices.framework */; };
@@ -41,7 +40,11 @@
 		AF38EC7C178F50A000C1A44B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF38EC7B178F50A000C1A44B /* Default@2x.png */; };
 		AF38EC7E178F50A000C1A44B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF38EC7D178F50A000C1A44B /* Default-568h@2x.png */; };
 		AF38EC81178F50A000C1A44B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF38EC7F178F50A000C1A44B /* MainStoryboard.storyboard */; };
-		AF38EC84178F50A000C1A44B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF38EC83178F50A000C1A44B /* LoginViewController.m */; };
+		AFCD4AF017D67EF9001F0FD5 /* NovoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4AE617D67EF9001F0FD5 /* NovoViewController.m */; };
+		AFCD4AF217D67EF9001F0FD5 /* RealizadosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4AEA17D67EF9001F0FD5 /* RealizadosViewController.m */; };
+		AFCD4AF417D67EF9001F0FD5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4AEF17D67EF9001F0FD5 /* LoginViewController.m */; };
+		AFCD4AF717D681F2001F0FD5 /* Cliente.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4AF617D681F2001F0FD5 /* Cliente.m */; };
+		AFCD4AFB17D685B1001F0FD5 /* Pessoa.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4AFA17D685B1001F0FD5 /* Pessoa.m */; };
 		AFFB614D17C3E93300AA2145 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB613317C3E92700AA2145 /* ISO8601DateFormatter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFFB614E17C3E93300AA2145 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB613517C3E92B00AA2145 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFFB614F17C3E93300AA2145 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = AFFB613817C3E93300AA2145 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -87,8 +90,6 @@
 		AF033E3D17B950D000F26D43 /* AnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationView.m; sourceTree = "<group>"; };
 		AF033E5717B952A500F26D43 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AF033E5B17B954F300F26D43 /* mt-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mt-logo.png"; sourceTree = "<group>"; };
-		AF033E5D17B960E400F26D43 /* AgendamentoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendamentoViewController.h; sourceTree = "<group>"; };
-		AF033E5E17B960E500F26D43 /* AgendamentoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendamentoViewController.m; sourceTree = "<group>"; };
 		AF033E6617B963E600F26D43 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		AF033E6717B963E700F26D43 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		AF033E8C17B9882300F26D43 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -110,8 +111,17 @@
 		AF38EC7B178F50A000C1A44B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AF38EC7D178F50A000C1A44B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AF38EC80178F50A000C1A44B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		AF38EC82178F50A000C1A44B /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		AF38EC83178F50A000C1A44B /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		AFCD4AD617D66DEA001F0FD5 /* Constantes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constantes.h; sourceTree = "<group>"; };
+		AFCD4AE517D67EF9001F0FD5 /* NovoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NovoViewController.h; sourceTree = "<group>"; };
+		AFCD4AE617D67EF9001F0FD5 /* NovoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NovoViewController.m; sourceTree = "<group>"; };
+		AFCD4AE917D67EF9001F0FD5 /* RealizadosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealizadosViewController.h; sourceTree = "<group>"; };
+		AFCD4AEA17D67EF9001F0FD5 /* RealizadosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealizadosViewController.m; sourceTree = "<group>"; };
+		AFCD4AEE17D67EF9001F0FD5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		AFCD4AEF17D67EF9001F0FD5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		AFCD4AF517D681F2001F0FD5 /* Cliente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cliente.h; path = Models/Cliente.h; sourceTree = "<group>"; };
+		AFCD4AF617D681F2001F0FD5 /* Cliente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cliente.m; path = Models/Cliente.m; sourceTree = "<group>"; };
+		AFCD4AF917D685B1001F0FD5 /* Pessoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pessoa.h; path = Models/Pessoa.h; sourceTree = "<group>"; };
+		AFCD4AFA17D685B1001F0FD5 /* Pessoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pessoa.m; path = Models/Pessoa.m; sourceTree = "<group>"; };
 		AFFB613217C3E92600AA2145 /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
 		AFFB613317C3E92700AA2145 /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601DateFormatter.m; sourceTree = "<group>"; };
 		AFFB613417C3E92800AA2145 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
@@ -171,6 +181,7 @@
 		AF033E0B17B950D000F26D43 /* Componentes */ = {
 			isa = PBXGroup;
 			children = (
+				AFCD4AD617D66DEA001F0FD5 /* Constantes.h */,
 				AFFB613217C3E92600AA2145 /* ISO8601DateFormatter.h */,
 				AFFB613317C3E92700AA2145 /* ISO8601DateFormatter.m */,
 				AFFB613417C3E92800AA2145 /* JSONKit.h */,
@@ -305,10 +316,8 @@
 				AF38EC76178F50A000C1A44B /* AppDelegate.h */,
 				AF38EC77178F50A000C1A44B /* AppDelegate.m */,
 				AF38EC7F178F50A000C1A44B /* MainStoryboard.storyboard */,
-				AF033E5D17B960E400F26D43 /* AgendamentoViewController.h */,
-				AF033E5E17B960E500F26D43 /* AgendamentoViewController.m */,
-				AF38EC82178F50A000C1A44B /* LoginViewController.h */,
-				AF38EC83178F50A000C1A44B /* LoginViewController.m */,
+				AFCD4AF817D681F7001F0FD5 /* Models */,
+				AFCD4AE317D67EF9001F0FD5 /* Controllers */,
 				AF033E0B17B950D000F26D43 /* Componentes */,
 				AF033E0417B94F8C00F26D43 /* Imagens */,
 				AF38EC6E178F50A000C1A44B /* Supporting Files */,
@@ -328,6 +337,46 @@
 				AF38EC7D178F50A000C1A44B /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AFCD4AE317D67EF9001F0FD5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AFCD4AE417D67EF9001F0FD5 /* Agendamento */,
+				AFCD4AEB17D67EF9001F0FD5 /* Usuario */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AFCD4AE417D67EF9001F0FD5 /* Agendamento */ = {
+			isa = PBXGroup;
+			children = (
+				AFCD4AE517D67EF9001F0FD5 /* NovoViewController.h */,
+				AFCD4AE617D67EF9001F0FD5 /* NovoViewController.m */,
+				AFCD4AE917D67EF9001F0FD5 /* RealizadosViewController.h */,
+				AFCD4AEA17D67EF9001F0FD5 /* RealizadosViewController.m */,
+			);
+			path = Agendamento;
+			sourceTree = "<group>";
+		};
+		AFCD4AEB17D67EF9001F0FD5 /* Usuario */ = {
+			isa = PBXGroup;
+			children = (
+				AFCD4AEE17D67EF9001F0FD5 /* LoginViewController.h */,
+				AFCD4AEF17D67EF9001F0FD5 /* LoginViewController.m */,
+			);
+			path = Usuario;
+			sourceTree = "<group>";
+		};
+		AFCD4AF817D681F7001F0FD5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AFCD4AF517D681F2001F0FD5 /* Cliente.h */,
+				AFCD4AF617D681F2001F0FD5 /* Cliente.m */,
+				AFCD4AF917D685B1001F0FD5 /* Pessoa.h */,
+				AFCD4AFA17D685B1001F0FD5 /* Pessoa.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		AFFB613617C3E92F00AA2145 /* Request */ = {
@@ -431,7 +480,6 @@
 			files = (
 				AF38EC74178F50A000C1A44B /* main.m in Sources */,
 				AF38EC78178F50A000C1A44B /* AppDelegate.m in Sources */,
-				AF38EC84178F50A000C1A44B /* LoginViewController.m in Sources */,
 				AF033E4517B950D000F26D43 /* UIImage+Alpha.m in Sources */,
 				AF033E4617B950D000F26D43 /* UIImage+Resize.m in Sources */,
 				AF033E4717B950D000F26D43 /* UIImage+RoundedCorner.m in Sources */,
@@ -446,7 +494,6 @@
 				AF033E5017B950D000F26D43 /* AccessorizedCalloutMapAnnotationView.m in Sources */,
 				AF033E5117B950D000F26D43 /* Annotation.m in Sources */,
 				AF033E5217B950D000F26D43 /* AnnotationView.m in Sources */,
-				AF033E5F17B960E600F26D43 /* AgendamentoViewController.m in Sources */,
 				AFFB614D17C3E93300AA2145 /* ISO8601DateFormatter.m in Sources */,
 				AFFB614E17C3E93300AA2145 /* JSONKit.m in Sources */,
 				AFFB614F17C3E93300AA2145 /* ASIAuthenticationDialog.m in Sources */,
@@ -458,6 +505,11 @@
 				AFFB615517C3E93300AA2145 /* ASIInputStream.m in Sources */,
 				AFFB615617C3E93300AA2145 /* ASINetworkQueue.m in Sources */,
 				AFFB615717C3E93300AA2145 /* Reachability.m in Sources */,
+				AFCD4AF017D67EF9001F0FD5 /* NovoViewController.m in Sources */,
+				AFCD4AF217D67EF9001F0FD5 /* RealizadosViewController.m in Sources */,
+				AFCD4AF417D67EF9001F0FD5 /* LoginViewController.m in Sources */,
+				AFCD4AF717D681F2001F0FD5 /* Cliente.m in Sources */,
+				AFCD4AFB17D685B1001F0FD5 /* Pessoa.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
