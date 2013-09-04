@@ -14,5 +14,6 @@
 #define ENDERECO_SERVICOS [[@"http://localhost" stringByAppendingString: ENDERECO_PORTA] stringByAppendingString: ENDERECO_CAMINHO]
 
 #define SERVICO_LOGAR [ENDERECO_SERVICOS stringByAppendingString: @"/login"]
+#define SERVICO_LISTAR_AGENDAMENTOS [ENDERECO_SERVICOS stringByAppendingString: @"/agendamentos/%@"]
 
 #endif

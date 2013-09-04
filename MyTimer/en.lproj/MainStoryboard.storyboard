@@ -16,20 +16,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jose" borderStyle="roundedRect" placeholder="Login" minimumFontSize="17" clearButtonMode="whileEditing" id="SfC-jo-Zkr">
-                                        <rect key="frame" x="20" y="247" width="280" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" minimumFontSize="17" clearButtonMode="whileEditing" id="SfC-jo-Zkr">
+                                        <rect key="frame" x="20" y="222" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="0.054430885040000002" green="0.29120095800000001" blue="0.50031364050000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jose" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" clearButtonMode="whileEditing" id="38T-6L-Jq6">
-                                        <rect key="frame" x="20" y="300" width="280" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" clearButtonMode="whileEditing" id="38T-6L-Jq6">
+                                        <rect key="frame" x="20" y="259" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="0.054430885040000002" green="0.29120095800000001" blue="0.50031364050000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="naE-AF-Oev">
-                                        <rect key="frame" x="113" y="407" width="95" height="44"/>
+                                        <rect key="frame" x="113" y="382" width="95" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Entrar">
@@ -51,20 +53,45 @@
                                         <rect key="frame" x="241" y="124" width="48" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="ryo-9P-dbG">
+                                    <navigationBar contentMode="scaleToFill" id="ryo-9P-dbG">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <items>
                                             <navigationItem title="Login" id="6h1-Y6-6tB"/>
                                         </items>
                                     </navigationBar>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Usuario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tMR-KI-jow">
+                                        <rect key="frame" x="20" y="298" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.054430885040000002" green="0.29120095800000001" blue="0.50031364050000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="efh-Jj-uVe">
+                                        <rect key="frame" x="113" y="327" width="95" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Continuar">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="continua:" destination="2" eventType="touchUpInside" id="A9O-Sy-jOz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.82745098039999998" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="xee-Ms-fHn"/>
                     <connections>
+                        <outlet property="btnContinuar" destination="efh-Jj-uVe" id="ULM-ES-ez8"/>
+                        <outlet property="btnEntrar" destination="naE-AF-Oev" id="RVs-Li-3cE"/>
+                        <outlet property="lblUsuario" destination="tMR-KI-jow" id="uNo-dy-fza"/>
                         <outlet property="svTela" destination="fnN-Ly-AEj" id="oQI-z5-blh"/>
                         <outlet property="txtLogin" destination="SfC-jo-Zkr" id="AoW-S5-K89"/>
                         <outlet property="txtSenha" destination="38T-6L-Jq6" id="PhU-zV-GDo"/>
@@ -83,7 +110,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="uDE-Sy-YGV">
+                            <navigationBar contentMode="scaleToFill" id="uDE-Sy-YGV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
@@ -97,7 +124,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.82745098039999998" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="KbU-IT-ZQX"/>
                 </viewController>
@@ -108,21 +135,47 @@
         <!--Realizados View Controller-->
         <scene sceneID="eP9-uP-TFa">
             <objects>
-                <viewController id="00P-zH-sfG" customClass="RealizadosViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Realizados" id="00P-zH-sfG" customClass="RealizadosViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eL2-1e-an1">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eME-eB-8RG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="eME-eB-8RG">
                                 <rect key="frame" x="0.0" y="44" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.82745098039999998" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="L6K-fZ-4Vf" detailTextLabel="nqt-rQ-FH8" rowHeight="100" style="IBUITableViewCellStyleSubtitle" id="01I-ag-PNQ">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="L6K-fZ-4Vf">
+                                                    <rect key="frame" x="10" y="33" width="31" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" red="0.054430885040000002" green="0.29120095800000001" blue="0.50031364050000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nqt-rQ-FH8">
+                                                    <rect key="frame" x="10" y="52" width="41" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.071936762979999999" green="0.46466282580000001" blue="0.79753268489999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="00P-zH-sfG" id="tRV-bQ-Rha"/>
-                                    <outlet property="delegate" destination="00P-zH-sfG" id="goq-Jm-s8M"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="fe9-Uk-eEQ">
+                            <navigationBar contentMode="scaleToFill" id="fe9-Uk-eEQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
@@ -144,6 +197,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="d3x-1S-O0Q"/>
+                    <connections>
+                        <outlet property="tbAgendamentos" destination="eME-eB-8RG" id="vIA-JF-kPd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J9V-QS-xbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -159,6 +215,10 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
                 <relationship kind="action" name="autentica:" candidateClass="UIButton"/>
+                <relationship kind="action" name="continua:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnContinuar" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnEntrar" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="lblUsuario" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="svTela" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="txtLogin" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="txtSenha" candidateClass="UITextField"/>
@@ -175,6 +235,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RealizadosViewController.h"/>
             <relationships>
                 <relationship kind="action" name="btnSair:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tbAgendamentos" candidateClass="UITableView"/>
             </relationships>
         </class>
     </classes>

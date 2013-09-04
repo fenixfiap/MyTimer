@@ -2,8 +2,8 @@
 //  main.m
 //  MyTimer
 //
-//  Created by Gabriel Moraes on 11/07/13.
-//  Copyright (c) 2013 Gabriel Moraes. All rights reserved.
+//  Created by Gabriel Moraes on 04/09/13.
+//  Copyright (c) 2013 Fenix. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
