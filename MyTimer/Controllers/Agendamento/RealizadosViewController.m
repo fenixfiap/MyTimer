@@ -13,6 +13,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self listaAgendamentos];
+}
+
+-(void)listaAgendamentos
+{
+    self.tbAgendamentos.userInteractionEnabled = NO;
     carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
     [self.view addSubview:carregandoTela];
     
@@ -42,23 +49,7 @@
 {
     if (event.subtype == UIEventSubtypeMotionShake)
     {
-        carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
-        [self.view addSubview:carregandoTela];
-        NSManagedObjectContext *context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription
-                                       entityForName:@"Usuario" inManagedObjectContext:context];
-        [fetchRequest setEntity:entity];
-        NSError *error;
-        NSArray* fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-        NSString* cpf = [((NSManagedObject*)fetchedObjects[0]) valueForKey:@"cpf"];
-        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:SERVICO_LISTAR_AGENDAMENTOS, cpf]];
-        ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
-        [request setRequestMethod:@"GET"];
-        [request setShowAccurateProgress:YES];
-        [request setUploadProgressDelegate:self];
-        [request setDelegate:self];
-        [request startAsynchronous];
+        [self listaAgendamentos];
     }
     
     if ( [super respondsToSelector:@selector(motionEnded:withEvent:)] )
@@ -130,7 +121,7 @@
     [UIView animateWithDuration:0.5
                      animations:^{carregandoTela.alpha = 0.0;}
                      completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
-    
+    self.tbAgendamentos.userInteractionEnabled = YES;
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de conexão:" message:@"Não foi possível se conectar com o serviço. Verique sua conexão e tente novamente." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
 }
@@ -140,7 +131,7 @@
     [UIView animateWithDuration:0.5
                      animations:^{carregandoTela.alpha = 0.0;}
                      completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
-    
+    self.tbAgendamentos.userInteractionEnabled = YES;
     if (request.responseStatusCode == 200) {
         arrAgendamentos = (NSArray*)[request.responseData objectFromJSONData];
         [self.tbAgendamentos reloadData];
