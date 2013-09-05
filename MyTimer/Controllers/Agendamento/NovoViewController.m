@@ -20,7 +20,8 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)cancelaNovo:(UIBarButtonItem *)sender {
+- (IBAction)cancelaNovo:(UIBarButtonItem *)sender
+{
     UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                   initWithTitle:@"Deseja realmente cancelar o agendamento?"
                                   delegate:self
@@ -30,8 +31,10 @@
     [actionSheet showInView:self.view.window];
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }

@@ -9,6 +9,8 @@
 #ifndef MyTimer_Constantes_h
 #define MyTimer_Constantes_h
 
+#define USER_INFO_ULTIMO_LOGADO @"ultimoUsuarioLogado"
+
 #define ENDERECO_PORTA @":8080"
 #define ENDERECO_CAMINHO @"/mt-web/ws/mobile"
 #define ENDERECO_SERVICOS [[@"http://localhost" stringByAppendingString: ENDERECO_PORTA] stringByAppendingString: ENDERECO_CAMINHO]

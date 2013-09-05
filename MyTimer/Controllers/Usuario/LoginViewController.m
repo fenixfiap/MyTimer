@@ -22,7 +22,8 @@
     self.txtSenha.inputAccessoryView = keyboard;
 }
 
--(void) viewWillAppear:(BOOL)animated {
+-(void) viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     NSManagedObjectContext *context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -31,7 +32,8 @@
     [fetchRequest setEntity:entity];
     NSError *error;
     NSArray* fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    if (fetchedObjects.count > 0) {
+    if (fetchedObjects.count > 0)
+    {
         self.btnEntrar.hidden = YES;
         self.txtLogin.hidden = YES;
         self.txtSenha.hidden = YES;
@@ -39,12 +41,18 @@
         self.btnContinuar.hidden = NO;
         self.lblUsuario.text = [NSString stringWithFormat:@"Bem vindo, %@", [((NSManagedObject*)fetchedObjects[0]) valueForKey:@"nome"]];
     }
-    else {
+    else
+    {
         self.btnEntrar.hidden = NO;
         self.txtLogin.hidden = NO;
         self.txtSenha.hidden = NO;
         self.lblUsuario.hidden = YES;
         self.btnContinuar.hidden = YES;
+        self.txtSenha.text = @"";
+        
+        NSString* login = [[NSUserDefaults standardUserDefaults] valueForKey:USER_INFO_ULTIMO_LOGADO];
+        if (login)
+            self.txtLogin.text = login;
     }
 }
 
@@ -73,7 +81,8 @@
     [self performSegueWithIdentifier:@"sgLoga" sender:self];
 }
 
--(BOOL)validaCampos{
+-(BOOL)validaCampos
+{
     NSMutableString *vcMensagemRetorno = [[NSMutableString alloc] init];
     
     if ([self.txtLogin.text isEqualToString:@""]){
@@ -86,6 +95,9 @@
     
     if (vcMensagemRetorno.length > 0) {
         [self.view endEditing:YES];
+        [UIView animateWithDuration:0.5
+                         animations:^{carregandoTela.alpha = 0.0;}
+                         completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:vcMensagemRetorno delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         return NO;
@@ -97,7 +109,8 @@
 
 #pragma mark - Métodos Request Delegate
 
-- (void)requestFailed:(ASIHTTPRequest *)request{
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
     NSLog(@"Response %d ==> %@", request.responseStatusCode, [request responseString]);
     [UIView animateWithDuration:0.5
                      animations:^{carregandoTela.alpha = 0.0;}
@@ -107,13 +120,15 @@
     [alert show];
 }
 
-- (void)requestFinished:(ASIFormDataRequest *)request {
+- (void)requestFinished:(ASIFormDataRequest *)request
+{
     NSLog(@"Response %d ==> %@", request.responseStatusCode, [request responseString]);
     [UIView animateWithDuration:0.5
                      animations:^{carregandoTela.alpha = 0.0;}
                      completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
     
-    if (request.responseStatusCode == 200) {
+    if (request.responseStatusCode == 200)
+    {
         NSDictionary *dicRetorno = [[NSDictionary alloc] initWithDictionary:((NSDictionary*)[request.responseData objectFromJSONData])];
         
         NSManagedObjectContext *context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
@@ -130,13 +145,15 @@
         [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.cpf"] forKey:@"cpf"];
         [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.contato.email"] forKey:@"email"];
         NSError *error;
-        if (![context save:&error]) {
+        if (![context save:&error])
+        {
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
         }
         
         [self performSegueWithIdentifier:@"sgLoga" sender:self];
     }
-    else {
+    else
+    {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de login:" message:@"Usuário e/ou senha inválidos." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }

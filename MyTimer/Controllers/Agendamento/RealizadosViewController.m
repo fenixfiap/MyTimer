@@ -40,7 +40,7 @@
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
-    if ( event.subtype == UIEventSubtypeMotionShake )
+    if (event.subtype == UIEventSubtypeMotionShake)
     {
         carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
         [self.view addSubview:carregandoTela];
@@ -70,7 +70,8 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)btnSair:(UIBarButtonItem *)sender {
+- (IBAction)btnSair:(UIBarButtonItem *)sender
+{
     UIActionSheet *actionSheet = [[UIActionSheet alloc]
                                   initWithTitle:@"Deseja realmente sair?"
                                   delegate:self
@@ -80,7 +81,8 @@
     [actionSheet showInView:self.view.window];
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
     if (buttonIndex == 0) {
         NSManagedObjectContext *context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -89,6 +91,7 @@
         [fetchRequest setEntity:entity];
         NSError *error;
         NSArray* fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        [[NSUserDefaults standardUserDefaults] setValue:[fetchedObjects[0] valueForKey:@"login"] forKey:USER_INFO_ULTIMO_LOGADO];
         for (NSManagedObject* object in fetchedObjects) {
             [context deleteObject:object];
         }

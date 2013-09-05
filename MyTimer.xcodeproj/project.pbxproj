@@ -19,18 +19,10 @@
 		AFCD4B2717D77050001F0FD5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCD4B2617D77050001F0FD5 /* Default-568h@2x.png */; };
 		AFCD4B2A17D77050001F0FD5 /* MyTimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B2817D77050001F0FD5 /* MyTimer.xcdatamodeld */; };
 		AFCD4B8217D770E1001F0FD5 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B3417D770E1001F0FD5 /* ISO8601DateFormatter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		AFCD4B8317D770E1001F0FD5 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B3817D770E1001F0FD5 /* UIImage+Alpha.m */; };
-		AFCD4B8417D770E1001F0FD5 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B3A17D770E1001F0FD5 /* UIImage+Resize.m */; };
-		AFCD4B8517D770E1001F0FD5 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B3C17D770E1001F0FD5 /* UIImage+RoundedCorner.m */; };
-		AFCD4B8617D770E1001F0FD5 /* JKCallbacksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B3E17D770E1001F0FD5 /* JKCallbacksTableViewCell.m */; };
 		AFCD4B8717D770E1001F0FD5 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B4017D770E1001F0FD5 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFCD4B8817D770E1001F0FD5 /* KeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B4317D770E1001F0FD5 /* KeyboardToolbar.m */; };
 		AFCD4B8917D770E1001F0FD5 /* CustomActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B4617D770E1001F0FD5 /* CustomActivityIndicatorView.m */; };
 		AFCD4B8A17D770E1001F0FD5 /* HZActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B4817D770E1001F0FD5 /* HZActivityIndicatorView.m */; };
-		AFCD4B8B17D770E1001F0FD5 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B4B17D770E1001F0FD5 /* ECSlidingViewController.m */; };
-		AFCD4B8C17D770E1001F0FD5 /* InitialSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B4D17D770E1001F0FD5 /* InitialSlidingViewController.m */; };
-		AFCD4B8D17D770E1001F0FD5 /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B4F17D770E1001F0FD5 /* UIImage+ImageWithUIView.m */; };
-		AFCD4B8E17D770E1001F0FD5 /* PopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B5217D770E1001F0FD5 /* PopUp.m */; };
 		AFCD4B8F17D770E1001F0FD5 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B5517D770E1001F0FD5 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFCD4B9017D770E1001F0FD5 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B5817D770E1001F0FD5 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFCD4B9117D770E1001F0FD5 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B5A17D770E1001F0FD5 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -40,24 +32,18 @@
 		AFCD4B9517D770E1001F0FD5 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B6417D770E1001F0FD5 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFCD4B9617D770E1001F0FD5 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B6617D770E1001F0FD5 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AFCD4B9717D770E1001F0FD5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B6917D770E1001F0FD5 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		AFCD4B9817D770E1001F0FD5 /* AccessorizedCalloutMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B6C17D770E1001F0FD5 /* AccessorizedCalloutMapAnnotationView.m */; };
-		AFCD4B9917D770E1001F0FD5 /* Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B6E17D770E1001F0FD5 /* Annotation.m */; };
-		AFCD4B9A17D770E1001F0FD5 /* AnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B7017D770E1001F0FD5 /* AnnotationView.m */; };
 		AFCD4B9B17D770E1001F0FD5 /* NovoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B7417D770E1001F0FD5 /* NovoViewController.m */; };
 		AFCD4B9C17D770E1001F0FD5 /* RealizadosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B7617D770E1001F0FD5 /* RealizadosViewController.m */; };
 		AFCD4B9D17D770E1001F0FD5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B7917D770E1001F0FD5 /* LoginViewController.m */; };
 		AFCD4B9E17D770E1001F0FD5 /* mt-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCD4B7B17D770E1001F0FD5 /* mt-clock.png */; };
 		AFCD4B9F17D770E1001F0FD5 /* mt-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCD4B7C17D770E1001F0FD5 /* mt-logo.png */; };
-		AFCD4BA017D770E1001F0FD5 /* Cliente.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B7F17D770E1001F0FD5 /* Cliente.m */; };
-		AFCD4BA117D770E1001F0FD5 /* Pessoa.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B8117D770E1001F0FD5 /* Pessoa.m */; };
 		AFCD4BA417D77116001F0FD5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCD4BA217D77116001F0FD5 /* Icon.png */; };
 		AFCD4BA517D77116001F0FD5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCD4BA317D77116001F0FD5 /* Icon@2x.png */; };
 		AFCD4BA717D771C0001F0FD5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4BA617D771C0001F0FD5 /* CFNetwork.framework */; };
-		AFCD4BA917D771CC001F0FD5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4BA817D771CC001F0FD5 /* libz.dylib */; };
-		AFCD4BAD17D77205001F0FD5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4BAC17D77205001F0FD5 /* MobileCoreServices.framework */; };
-		AFCD4BB317D7724B001F0FD5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4BB217D7724B001F0FD5 /* SystemConfiguration.framework */; };
-		AFCD4BC217D772F3001F0FD5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4BC117D772F3001F0FD5 /* MapKit.framework */; };
 		AFCD4BC517D7739B001F0FD5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCD4BC317D7739B001F0FD5 /* MainStoryboard.storyboard */; };
+		AFCD4BC617D7ACBC001F0FD5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4BB217D7724B001F0FD5 /* SystemConfiguration.framework */; };
+		AFCD4BC717D7ACCC001F0FD5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4BAC17D77205001F0FD5 /* MobileCoreServices.framework */; };
+		AFCD4BC817D7ACD8001F0FD5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4BA817D771CC001F0FD5 /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,14 +65,6 @@
 		AFCD4B3117D770E1001F0FD5 /* Constantes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constantes.h; sourceTree = "<group>"; };
 		AFCD4B3317D770E1001F0FD5 /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
 		AFCD4B3417D770E1001F0FD5 /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601DateFormatter.m; sourceTree = "<group>"; };
-		AFCD4B3717D770E1001F0FD5 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
-		AFCD4B3817D770E1001F0FD5 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
-		AFCD4B3917D770E1001F0FD5 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
-		AFCD4B3A17D770E1001F0FD5 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
-		AFCD4B3B17D770E1001F0FD5 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
-		AFCD4B3C17D770E1001F0FD5 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
-		AFCD4B3D17D770E1001F0FD5 /* JKCallbacksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCallbacksTableViewCell.h; sourceTree = "<group>"; };
-		AFCD4B3E17D770E1001F0FD5 /* JKCallbacksTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCallbacksTableViewCell.m; sourceTree = "<group>"; };
 		AFCD4B3F17D770E1001F0FD5 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		AFCD4B4017D770E1001F0FD5 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		AFCD4B4217D770E1001F0FD5 /* KeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardToolbar.h; sourceTree = "<group>"; };
@@ -95,14 +73,6 @@
 		AFCD4B4617D770E1001F0FD5 /* CustomActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomActivityIndicatorView.m; sourceTree = "<group>"; };
 		AFCD4B4717D770E1001F0FD5 /* HZActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HZActivityIndicatorView.h; sourceTree = "<group>"; };
 		AFCD4B4817D770E1001F0FD5 /* HZActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HZActivityIndicatorView.m; sourceTree = "<group>"; };
-		AFCD4B4A17D770E1001F0FD5 /* ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSlidingViewController.h; sourceTree = "<group>"; };
-		AFCD4B4B17D770E1001F0FD5 /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
-		AFCD4B4C17D770E1001F0FD5 /* InitialSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialSlidingViewController.h; sourceTree = "<group>"; };
-		AFCD4B4D17D770E1001F0FD5 /* InitialSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialSlidingViewController.m; sourceTree = "<group>"; };
-		AFCD4B4E17D770E1001F0FD5 /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithUIView.h"; sourceTree = "<group>"; };
-		AFCD4B4F17D770E1001F0FD5 /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithUIView.m"; sourceTree = "<group>"; };
-		AFCD4B5117D770E1001F0FD5 /* PopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUp.h; sourceTree = "<group>"; };
-		AFCD4B5217D770E1001F0FD5 /* PopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUp.m; sourceTree = "<group>"; };
 		AFCD4B5417D770E1001F0FD5 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		AFCD4B5517D770E1001F0FD5 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		AFCD4B5617D770E1001F0FD5 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -125,12 +95,6 @@
 		AFCD4B6717D770E1001F0FD5 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
 		AFCD4B6817D770E1001F0FD5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		AFCD4B6917D770E1001F0FD5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		AFCD4B6B17D770E1001F0FD5 /* AccessorizedCalloutMapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessorizedCalloutMapAnnotationView.h; sourceTree = "<group>"; };
-		AFCD4B6C17D770E1001F0FD5 /* AccessorizedCalloutMapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessorizedCalloutMapAnnotationView.m; sourceTree = "<group>"; };
-		AFCD4B6D17D770E1001F0FD5 /* Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Annotation.h; sourceTree = "<group>"; };
-		AFCD4B6E17D770E1001F0FD5 /* Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Annotation.m; sourceTree = "<group>"; };
-		AFCD4B6F17D770E1001F0FD5 /* AnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationView.h; sourceTree = "<group>"; };
-		AFCD4B7017D770E1001F0FD5 /* AnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationView.m; sourceTree = "<group>"; };
 		AFCD4B7317D770E1001F0FD5 /* NovoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NovoViewController.h; sourceTree = "<group>"; };
 		AFCD4B7417D770E1001F0FD5 /* NovoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NovoViewController.m; sourceTree = "<group>"; };
 		AFCD4B7517D770E1001F0FD5 /* RealizadosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RealizadosViewController.h; sourceTree = "<group>"; };
@@ -139,25 +103,12 @@
 		AFCD4B7917D770E1001F0FD5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		AFCD4B7B17D770E1001F0FD5 /* mt-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mt-clock.png"; sourceTree = "<group>"; };
 		AFCD4B7C17D770E1001F0FD5 /* mt-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mt-logo.png"; sourceTree = "<group>"; };
-		AFCD4B7E17D770E1001F0FD5 /* Cliente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cliente.h; sourceTree = "<group>"; };
-		AFCD4B7F17D770E1001F0FD5 /* Cliente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cliente.m; sourceTree = "<group>"; };
-		AFCD4B8017D770E1001F0FD5 /* Pessoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pessoa.h; sourceTree = "<group>"; };
-		AFCD4B8117D770E1001F0FD5 /* Pessoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pessoa.m; sourceTree = "<group>"; };
 		AFCD4BA217D77116001F0FD5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		AFCD4BA317D77116001F0FD5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		AFCD4BA617D771C0001F0FD5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AFCD4BA817D771CC001F0FD5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		AFCD4BAA17D771D6001F0FD5 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		AFCD4BAC17D77205001F0FD5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		AFCD4BAE17D7722A001F0FD5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		AFCD4BB017D7723C001F0FD5 /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
 		AFCD4BB217D7724B001F0FD5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		AFCD4BB417D7728E001F0FD5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		AFCD4BB617D7729C001F0FD5 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		AFCD4BBA17D772C9001F0FD5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		AFCD4BBC17D772D0001F0FD5 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		AFCD4BBE17D772D7001F0FD5 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
-		AFCD4BC117D772F3001F0FD5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AFCD4BC417D7739B001F0FD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,10 +117,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFCD4BC217D772F3001F0FD5 /* MapKit.framework in Frameworks */,
-				AFCD4BB317D7724B001F0FD5 /* SystemConfiguration.framework in Frameworks */,
-				AFCD4BAD17D77205001F0FD5 /* MobileCoreServices.framework in Frameworks */,
-				AFCD4BA917D771CC001F0FD5 /* libz.dylib in Frameworks */,
+				AFCD4BC817D7ACD8001F0FD5 /* libz.dylib in Frameworks */,
+				AFCD4BC717D7ACCC001F0FD5 /* MobileCoreServices.framework in Frameworks */,
+				AFCD4BC617D7ACBC001F0FD5 /* SystemConfiguration.framework in Frameworks */,
 				AFCD4BA717D771C0001F0FD5 /* CFNetwork.framework in Frameworks */,
 				AFCD4B0F17D77050001F0FD5 /* UIKit.framework in Frameworks */,
 				AFCD4B1117D77050001F0FD5 /* Foundation.framework in Frameworks */,
@@ -203,17 +153,8 @@
 		AFCD4B0D17D77050001F0FD5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AFCD4BC117D772F3001F0FD5 /* MapKit.framework */,
-				AFCD4BBE17D772D7001F0FD5 /* AddressBookUI.framework */,
-				AFCD4BBC17D772D0001F0FD5 /* AddressBook.framework */,
-				AFCD4BBA17D772C9001F0FD5 /* CoreLocation.framework */,
-				AFCD4BB617D7729C001F0FD5 /* MessageUI.framework */,
-				AFCD4BB417D7728E001F0FD5 /* AVFoundation.framework */,
 				AFCD4BB217D7724B001F0FD5 /* SystemConfiguration.framework */,
-				AFCD4BB017D7723C001F0FD5 /* libresolv.dylib */,
-				AFCD4BAE17D7722A001F0FD5 /* Security.framework */,
 				AFCD4BAC17D77205001F0FD5 /* MobileCoreServices.framework */,
-				AFCD4BAA17D771D6001F0FD5 /* libxml2.dylib */,
 				AFCD4BA817D771CC001F0FD5 /* libz.dylib */,
 				AFCD4BA617D771C0001F0FD5 /* CFNetwork.framework */,
 				AFCD4B0E17D77050001F0FD5 /* UIKit.framework */,
@@ -234,7 +175,6 @@
 				AFCD4B3017D770E1001F0FD5 /* Componentes */,
 				AFCD4B7117D770E1001F0FD5 /* Controllers */,
 				AFCD4B7A17D770E1001F0FD5 /* Imagens */,
-				AFCD4B7D17D770E1001F0FD5 /* Models */,
 				AFCD4B1717D77050001F0FD5 /* Supporting Files */,
 			);
 			path = MyTimer;
@@ -258,50 +198,15 @@
 			isa = PBXGroup;
 			children = (
 				AFCD4B3117D770E1001F0FD5 /* Constantes.h */,
-				AFCD4B3217D770E1001F0FD5 /* FormularioDinamico */,
 				AFCD4B3317D770E1001F0FD5 /* ISO8601DateFormatter.h */,
 				AFCD4B3417D770E1001F0FD5 /* ISO8601DateFormatter.m */,
-				AFCD4B3517D770E1001F0FD5 /* JKTableViewCell */,
 				AFCD4B3F17D770E1001F0FD5 /* JSONKit.h */,
 				AFCD4B4017D770E1001F0FD5 /* JSONKit.m */,
 				AFCD4B4117D770E1001F0FD5 /* KeyboardToolbar */,
 				AFCD4B4417D770E1001F0FD5 /* Loading */,
-				AFCD4B4917D770E1001F0FD5 /* MenuECSliding */,
-				AFCD4B5017D770E1001F0FD5 /* PopUp */,
 				AFCD4B5317D770E1001F0FD5 /* Request */,
-				AFCD4B6A17D770E1001F0FD5 /* ToolTipMapa */,
 			);
 			path = Componentes;
-			sourceTree = "<group>";
-		};
-		AFCD4B3217D770E1001F0FD5 /* FormularioDinamico */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FormularioDinamico;
-			sourceTree = "<group>";
-		};
-		AFCD4B3517D770E1001F0FD5 /* JKTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				AFCD4B3617D770E1001F0FD5 /* Categories */,
-				AFCD4B3D17D770E1001F0FD5 /* JKCallbacksTableViewCell.h */,
-				AFCD4B3E17D770E1001F0FD5 /* JKCallbacksTableViewCell.m */,
-			);
-			path = JKTableViewCell;
-			sourceTree = "<group>";
-		};
-		AFCD4B3617D770E1001F0FD5 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				AFCD4B3717D770E1001F0FD5 /* UIImage+Alpha.h */,
-				AFCD4B3817D770E1001F0FD5 /* UIImage+Alpha.m */,
-				AFCD4B3917D770E1001F0FD5 /* UIImage+Resize.h */,
-				AFCD4B3A17D770E1001F0FD5 /* UIImage+Resize.m */,
-				AFCD4B3B17D770E1001F0FD5 /* UIImage+RoundedCorner.h */,
-				AFCD4B3C17D770E1001F0FD5 /* UIImage+RoundedCorner.m */,
-			);
-			path = Categories;
 			sourceTree = "<group>";
 		};
 		AFCD4B4117D770E1001F0FD5 /* KeyboardToolbar */ = {
@@ -322,28 +227,6 @@
 				AFCD4B4817D770E1001F0FD5 /* HZActivityIndicatorView.m */,
 			);
 			path = Loading;
-			sourceTree = "<group>";
-		};
-		AFCD4B4917D770E1001F0FD5 /* MenuECSliding */ = {
-			isa = PBXGroup;
-			children = (
-				AFCD4B4A17D770E1001F0FD5 /* ECSlidingViewController.h */,
-				AFCD4B4B17D770E1001F0FD5 /* ECSlidingViewController.m */,
-				AFCD4B4C17D770E1001F0FD5 /* InitialSlidingViewController.h */,
-				AFCD4B4D17D770E1001F0FD5 /* InitialSlidingViewController.m */,
-				AFCD4B4E17D770E1001F0FD5 /* UIImage+ImageWithUIView.h */,
-				AFCD4B4F17D770E1001F0FD5 /* UIImage+ImageWithUIView.m */,
-			);
-			path = MenuECSliding;
-			sourceTree = "<group>";
-		};
-		AFCD4B5017D770E1001F0FD5 /* PopUp */ = {
-			isa = PBXGroup;
-			children = (
-				AFCD4B5117D770E1001F0FD5 /* PopUp.h */,
-				AFCD4B5217D770E1001F0FD5 /* PopUp.m */,
-			);
-			path = PopUp;
 			sourceTree = "<group>";
 		};
 		AFCD4B5317D770E1001F0FD5 /* Request */ = {
@@ -373,19 +256,6 @@
 				AFCD4B6917D770E1001F0FD5 /* Reachability.m */,
 			);
 			path = Request;
-			sourceTree = "<group>";
-		};
-		AFCD4B6A17D770E1001F0FD5 /* ToolTipMapa */ = {
-			isa = PBXGroup;
-			children = (
-				AFCD4B6B17D770E1001F0FD5 /* AccessorizedCalloutMapAnnotationView.h */,
-				AFCD4B6C17D770E1001F0FD5 /* AccessorizedCalloutMapAnnotationView.m */,
-				AFCD4B6D17D770E1001F0FD5 /* Annotation.h */,
-				AFCD4B6E17D770E1001F0FD5 /* Annotation.m */,
-				AFCD4B6F17D770E1001F0FD5 /* AnnotationView.h */,
-				AFCD4B7017D770E1001F0FD5 /* AnnotationView.m */,
-			);
-			path = ToolTipMapa;
 			sourceTree = "<group>";
 		};
 		AFCD4B7117D770E1001F0FD5 /* Controllers */ = {
@@ -424,17 +294,6 @@
 				AFCD4B7C17D770E1001F0FD5 /* mt-logo.png */,
 			);
 			path = Imagens;
-			sourceTree = "<group>";
-		};
-		AFCD4B7D17D770E1001F0FD5 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				AFCD4B7E17D770E1001F0FD5 /* Cliente.h */,
-				AFCD4B7F17D770E1001F0FD5 /* Cliente.m */,
-				AFCD4B8017D770E1001F0FD5 /* Pessoa.h */,
-				AFCD4B8117D770E1001F0FD5 /* Pessoa.m */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,18 +370,10 @@
 				AFCD4B2117D77050001F0FD5 /* AppDelegate.m in Sources */,
 				AFCD4B2A17D77050001F0FD5 /* MyTimer.xcdatamodeld in Sources */,
 				AFCD4B8217D770E1001F0FD5 /* ISO8601DateFormatter.m in Sources */,
-				AFCD4B8317D770E1001F0FD5 /* UIImage+Alpha.m in Sources */,
-				AFCD4B8417D770E1001F0FD5 /* UIImage+Resize.m in Sources */,
-				AFCD4B8517D770E1001F0FD5 /* UIImage+RoundedCorner.m in Sources */,
-				AFCD4B8617D770E1001F0FD5 /* JKCallbacksTableViewCell.m in Sources */,
 				AFCD4B8717D770E1001F0FD5 /* JSONKit.m in Sources */,
 				AFCD4B8817D770E1001F0FD5 /* KeyboardToolbar.m in Sources */,
 				AFCD4B8917D770E1001F0FD5 /* CustomActivityIndicatorView.m in Sources */,
 				AFCD4B8A17D770E1001F0FD5 /* HZActivityIndicatorView.m in Sources */,
-				AFCD4B8B17D770E1001F0FD5 /* ECSlidingViewController.m in Sources */,
-				AFCD4B8C17D770E1001F0FD5 /* InitialSlidingViewController.m in Sources */,
-				AFCD4B8D17D770E1001F0FD5 /* UIImage+ImageWithUIView.m in Sources */,
-				AFCD4B8E17D770E1001F0FD5 /* PopUp.m in Sources */,
 				AFCD4B8F17D770E1001F0FD5 /* ASIAuthenticationDialog.m in Sources */,
 				AFCD4B9017D770E1001F0FD5 /* ASIDataCompressor.m in Sources */,
 				AFCD4B9117D770E1001F0FD5 /* ASIDataDecompressor.m in Sources */,
@@ -532,14 +383,9 @@
 				AFCD4B9517D770E1001F0FD5 /* ASIInputStream.m in Sources */,
 				AFCD4B9617D770E1001F0FD5 /* ASINetworkQueue.m in Sources */,
 				AFCD4B9717D770E1001F0FD5 /* Reachability.m in Sources */,
-				AFCD4B9817D770E1001F0FD5 /* AccessorizedCalloutMapAnnotationView.m in Sources */,
-				AFCD4B9917D770E1001F0FD5 /* Annotation.m in Sources */,
-				AFCD4B9A17D770E1001F0FD5 /* AnnotationView.m in Sources */,
 				AFCD4B9B17D770E1001F0FD5 /* NovoViewController.m in Sources */,
 				AFCD4B9C17D770E1001F0FD5 /* RealizadosViewController.m in Sources */,
 				AFCD4B9D17D770E1001F0FD5 /* LoginViewController.m in Sources */,
-				AFCD4BA017D770E1001F0FD5 /* Cliente.m in Sources */,
-				AFCD4BA117D770E1001F0FD5 /* Pessoa.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +508,7 @@
 				AFCD4B2F17D77050001F0FD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
