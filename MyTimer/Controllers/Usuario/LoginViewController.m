@@ -13,7 +13,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
     
     keyboard = [[KeyboardToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
     keyboard.svTela = self.svTela;
@@ -63,6 +62,7 @@
 
 - (IBAction)autentica:(UIButton *)sender {
     [self.view endEditing:YES];
+    carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
     [self.view addSubview:carregandoTela];
     if ([self validaCampos]) {
         NSURL *url = [NSURL URLWithString:SERVICO_LOGAR];
@@ -112,9 +112,7 @@
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
     NSLog(@"Response %d ==> %@", request.responseStatusCode, [request responseString]);
-    [UIView animateWithDuration:0.5
-                     animations:^{carregandoTela.alpha = 0.0;}
-                     completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
+    [carregandoTela removeFromSuperview];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de conexão:" message:@"Não foi possível se conectar com o serviço. Verique sua conexão e tente novamente." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
@@ -123,9 +121,7 @@
 - (void)requestFinished:(ASIFormDataRequest *)request
 {
     NSLog(@"Response %d ==> %@", request.responseStatusCode, [request responseString]);
-    [UIView animateWithDuration:0.5
-                     animations:^{carregandoTela.alpha = 0.0;}
-                     completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
+    [carregandoTela removeFromSuperview];
     
     if (request.responseStatusCode == 200)
     {

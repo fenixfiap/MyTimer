@@ -108,9 +108,14 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     NSDictionary* agendamento = [arrAgendamentos objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"Serviço: %@ \nProfissional: %@",[agendamento valueForKeyPath:@"servico.nome"],[agendamento valueForKeyPath:@"funcionario.pessoa.nome"]];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Data: %@ \nStatus: %@",[agendamento valueForKey:@"data"],[agendamento valueForKey:@"statusFormatado"]];
-    ;
+    @try {
+        cell.textLabel.text = [NSString stringWithFormat:@"Serviço: %@ \nProfissional: %@",[agendamento valueForKeyPath:@"servico.nome"],[agendamento valueForKeyPath:@"funcionario.pessoa.nome"]];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Data: %@ \nStatus: %@",[agendamento valueForKey:@"data"],[agendamento valueForKey:@"statusFormatado"]];
+    }
+    @catch (NSException *exception) {
+        cell.textLabel.text = @"Você não possui agendamentos.";
+        cell.detailTextLabel.text = @"";
+    }
     return cell;
 }
 
@@ -123,7 +128,6 @@
                      completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
     self.tbAgendamentos.userInteractionEnabled = YES;
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de conexão:" message:@"Não foi possível se conectar com o serviço. Verique sua conexão e tente novamente." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    
     [alert show];
 }
 
@@ -135,6 +139,8 @@
     self.tbAgendamentos.userInteractionEnabled = YES;
     if (request.responseStatusCode == 200) {
         arrAgendamentos = (NSArray*)[request.responseData objectFromJSONData];
+        if (arrAgendamentos.count < 1)
+            arrAgendamentos = [[NSArray alloc] initWithObjects:@"nil",nil];
         [self.tbAgendamentos reloadData];
     }
     else {
