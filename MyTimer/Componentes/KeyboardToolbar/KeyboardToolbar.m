@@ -13,24 +13,29 @@
 
 @synthesize svTela;
 
--(id)initWithFrame:(CGRect)frame{
+-(id)initWithFrame:(CGRect)frame andNavigation:(BOOL)isNav{
     
     if ((self = [super initWithFrame:frame])) {
-        
-        UIBarButtonItem *btAnterior = [[UIBarButtonItem alloc] initWithTitle:@"Anterior"
-                                                                       style:UIBarButtonItemStyleBordered
-                                                                      target:self
-                                                                      action:@selector(FocoCampoAnterior:)];
-        UIBarButtonItem *btProximo = [[UIBarButtonItem alloc] initWithTitle:@"Próximo"
-                                                                      style:UIBarButtonItemStyleBordered
-                                                                     target:self
-                                                                     action:@selector(FocoCampoProximo:)];
         
         UIBarButtonItem *btEspacamento = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemFlexibleSpace) target:nil action:nil];
         
         UIBarButtonItem *btEscondeTeclado = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemDone) target:self action:@selector(btnDoneEscondeTeclado:)];
         
-        [self setItems:[NSArray arrayWithObjects:btAnterior, btProximo, btEspacamento,btEscondeTeclado, nil]];
+        if (isNav) {
+            UIBarButtonItem *btAnterior = [[UIBarButtonItem alloc] initWithTitle:@"Anterior"
+                                                                           style:UIBarButtonItemStyleBordered
+                                                                          target:self
+                                                                          action:@selector(FocoCampoAnterior:)];
+            UIBarButtonItem *btProximo = [[UIBarButtonItem alloc] initWithTitle:@"Próximo"
+                                                                          style:UIBarButtonItemStyleBordered
+                                                                         target:self
+                                                                         action:@selector(FocoCampoProximo:)];
+            
+            [self setItems:[NSArray arrayWithObjects:btAnterior, btProximo, btEspacamento,btEscondeTeclado, nil]];
+        }
+        else {
+            [self setItems:[NSArray arrayWithObjects: btEspacamento,btEscondeTeclado, nil]];
+        }
         
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(FocoCampoAtual:)

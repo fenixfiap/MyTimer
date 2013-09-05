@@ -44,6 +44,8 @@
 		AFCD4BC617D7ACBC001F0FD5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4BB217D7724B001F0FD5 /* SystemConfiguration.framework */; };
 		AFCD4BC717D7ACCC001F0FD5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4BAC17D77205001F0FD5 /* MobileCoreServices.framework */; };
 		AFCD4BC817D7ACD8001F0FD5 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4BA817D771CC001F0FD5 /* libz.dylib */; };
+		AFCD4BD217D8D8EE001F0FD5 /* CustomDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4BCF17D8D8EE001F0FD5 /* CustomDatePicker.m */; };
+		AFCD4BD317D8D8EE001F0FD5 /* CustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4BD117D8D8EE001F0FD5 /* CustomPicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +112,10 @@
 		AFCD4BAC17D77205001F0FD5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		AFCD4BB217D7724B001F0FD5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AFCD4BC417D7739B001F0FD5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		AFCD4BCE17D8D8EE001F0FD5 /* CustomDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDatePicker.h; sourceTree = "<group>"; };
+		AFCD4BCF17D8D8EE001F0FD5 /* CustomDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDatePicker.m; sourceTree = "<group>"; };
+		AFCD4BD017D8D8EE001F0FD5 /* CustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPicker.h; sourceTree = "<group>"; };
+		AFCD4BD117D8D8EE001F0FD5 /* CustomPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,11 +203,12 @@
 		AFCD4B3017D770E1001F0FD5 /* Componentes */ = {
 			isa = PBXGroup;
 			children = (
-				AFCD4B3117D770E1001F0FD5 /* Constantes.h */,
 				AFCD4B3317D770E1001F0FD5 /* ISO8601DateFormatter.h */,
+				AFCD4B3117D770E1001F0FD5 /* Constantes.h */,
 				AFCD4B3417D770E1001F0FD5 /* ISO8601DateFormatter.m */,
 				AFCD4B3F17D770E1001F0FD5 /* JSONKit.h */,
 				AFCD4B4017D770E1001F0FD5 /* JSONKit.m */,
+				AFCD4BCD17D8D8EE001F0FD5 /* Pickers */,
 				AFCD4B4117D770E1001F0FD5 /* KeyboardToolbar */,
 				AFCD4B4417D770E1001F0FD5 /* Loading */,
 				AFCD4B5317D770E1001F0FD5 /* Request */,
@@ -296,6 +303,17 @@
 			path = Imagens;
 			sourceTree = "<group>";
 		};
+		AFCD4BCD17D8D8EE001F0FD5 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				AFCD4BCE17D8D8EE001F0FD5 /* CustomDatePicker.h */,
+				AFCD4BCF17D8D8EE001F0FD5 /* CustomDatePicker.m */,
+				AFCD4BD017D8D8EE001F0FD5 /* CustomPicker.h */,
+				AFCD4BD117D8D8EE001F0FD5 /* CustomPicker.m */,
+			);
+			path = Pickers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -386,6 +404,8 @@
 				AFCD4B9B17D770E1001F0FD5 /* NovoViewController.m in Sources */,
 				AFCD4B9C17D770E1001F0FD5 /* RealizadosViewController.m in Sources */,
 				AFCD4B9D17D770E1001F0FD5 /* LoginViewController.m in Sources */,
+				AFCD4BD217D8D8EE001F0FD5 /* CustomDatePicker.m in Sources */,
+				AFCD4BD317D8D8EE001F0FD5 /* CustomPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

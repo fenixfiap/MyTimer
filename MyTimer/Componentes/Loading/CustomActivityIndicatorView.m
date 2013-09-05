@@ -27,9 +27,9 @@
     HZActivityIndicatorView *activityIndicator = [[HZActivityIndicatorView alloc] init];
     activityIndicator.backgroundColor = [UIColor clearColor];
     activityIndicator.opaque = YES;
-    activityIndicator.steps = 8;
-    activityIndicator.finSize = CGSizeMake(10, 20);
-    activityIndicator.indicatorRadius = 20;
+    activityIndicator.steps = 10;
+    activityIndicator.finSize = CGSizeMake(5, 20);
+    activityIndicator.indicatorRadius = 10;
     activityIndicator.stepDuration = 0.120;
     activityIndicator.color = [UIColor whiteColor];
     activityIndicator.cornerRadii = CGSizeMake(10, 10);

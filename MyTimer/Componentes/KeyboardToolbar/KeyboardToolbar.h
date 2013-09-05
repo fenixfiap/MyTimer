@@ -19,4 +19,6 @@
 
 @property(nonatomic,strong)UIScrollView * svTela;
 
+-(id)initWithFrame:(CGRect)frame andNavigation:(BOOL)isNav;
+
 @end

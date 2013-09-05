@@ -12,12 +12,11 @@
 #import "ASIFormDataRequest.h"
 #import "JSONKit.h"
 #import "Constantes.h"
-#import "CustomActivityIndicatorView.h"
 
 @interface RealizadosViewController : UIViewController <UIActionSheetDelegate, UITableViewDataSource>
 {
-    @private CustomActivityIndicatorView* carregandoTela;
     @private NSArray *arrAgendamentos;
+    @private UIRefreshControl* refresh;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tbAgendamentos;

@@ -14,7 +14,7 @@
 {
     [super viewDidLoad];
     
-    keyboard = [[KeyboardToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44)];
+    KeyboardToolbar* keyboard = [[KeyboardToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 44) andNavigation:YES];
     keyboard.svTela = self.svTela;
     
     self.txtLogin.inputAccessoryView = keyboard;
@@ -59,6 +59,8 @@
 {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark - Métodos de Classe
 
 - (IBAction)autentica:(UIButton *)sender {
     [self.view endEditing:YES];

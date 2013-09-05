@@ -17,7 +17,6 @@
 
 @interface LoginViewController : UIViewController
 {
-    @private KeyboardToolbar* keyboard;
     @private CustomActivityIndicatorView* carregandoTela;
 }
 
