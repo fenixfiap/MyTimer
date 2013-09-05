@@ -123,6 +123,7 @@
                      completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
     self.tbAgendamentos.userInteractionEnabled = YES;
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de conexão:" message:@"Não foi possível se conectar com o serviço. Verique sua conexão e tente novamente." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    
     [alert show];
 }
 
