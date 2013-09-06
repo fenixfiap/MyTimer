@@ -148,6 +148,7 @@
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
         }
         
+        [[NSUserDefaults standardUserDefaults] setValue:self.txtLogin.text forKey:USER_INFO_ULTIMO_LOGADO];
         [self performSegueWithIdentifier:@"sgLoga" sender:self];
     }
     else

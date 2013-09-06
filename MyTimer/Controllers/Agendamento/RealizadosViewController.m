@@ -72,7 +72,6 @@
         [fetchRequest setEntity:entity];
         NSError *error;
         NSArray* fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-        [[NSUserDefaults standardUserDefaults] setValue:[fetchedObjects[0] valueForKey:@"login"] forKey:USER_INFO_ULTIMO_LOGADO];
         for (NSManagedObject* object in fetchedObjects) {
             [context deleteObject:object];
         }

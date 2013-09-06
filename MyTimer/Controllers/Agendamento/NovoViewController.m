@@ -75,8 +75,7 @@
         NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"dd/MM/yyyy";
         NSDate* dataSel = [formatter dateFromString:self.txtData.text];
-        NSDate* dataAtual = [NSDate date];
-        if([dataSel compare: dataAtual] != NSOrderedDescending)
+        if([dataSel compare: [NSDate date]] != NSOrderedDescending)
         {
             self.scPreferencia.enabled = NO;
             self.txtDentista.enabled = NO;
@@ -103,17 +102,9 @@
 -(void) alteraPreferencia
 {
     if (self.scPreferencia.selectedSegmentIndex == 0)
-    {
         self.txtDentista.enabled = YES;
-        self.txtDentista.tag = 3;
-        self.txtHorario.tag = 4;
-    }
     else
-    {
         self.txtDentista.enabled = NO;
-        self.txtDentista.tag = -1;
-        self.txtHorario.tag = 3;
-    }
     
     self.txtHorario.enabled = YES;
     self.txtDentista.text = @"";
