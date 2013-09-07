@@ -11,7 +11,8 @@
 @interface CustomPicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate>
 {
     @private UITextField *txtAssociado;
-@private NSDictionary *dictConteudo;
+    @private NSDictionary *dictConteudo;
+    @private NSArray * arrOrdenado;
 }
 
 - (id)initWithFrame:(CGRect)frame andTextField:(UITextField *)txt andContent:(NSDictionary *)content;

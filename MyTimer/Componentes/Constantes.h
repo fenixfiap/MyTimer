@@ -17,5 +17,11 @@
 
 #define SERVICO_LOGAR [ENDERECO_SERVICOS stringByAppendingString: @"/login"]
 #define SERVICO_LISTAR_AGENDAMENTOS [ENDERECO_SERVICOS stringByAppendingString: @"/agendamentos/%@"]
+#define SERVICO_LISTAR_SERVICOS [ENDERECO_SERVICOS stringByAppendingString: @"/servicos"]
+#define SERVICO_LISTAR_HORARIOS [ENDERECO_SERVICOS stringByAppendingString: @"/horarios"]
+#define SERVICO_LISTAR_HORARIOS_DENTISTA [ENDERECO_SERVICOS stringByAppendingString: @"/horariosFuncionario"]
+#define SERVICO_LISTAR_DENTISTAS [ENDERECO_SERVICOS stringByAppendingString: @"/prestadores"]
+#define SERVICO_AGENDAR [ENDERECO_SERVICOS stringByAppendingString: @"/agendar"]
+
 
 #endif

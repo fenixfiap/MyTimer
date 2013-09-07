@@ -9,9 +9,8 @@
         <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rg" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="senha" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Usuario" positionX="351" positionY="72" width="128" height="178"/>
+        <element name="Usuario" positionX="351" positionY="72" width="128" height="163"/>
     </elements>
 </model>

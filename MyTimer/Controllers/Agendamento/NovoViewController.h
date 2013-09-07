@@ -8,13 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "KeyboardToolbar.h"
+#import "AppDelegate.h"
 #import "CustomActivityIndicatorView.h"
 #import "CustomPicker.h"
 #import "CustomDatePicker.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+#import "JSONKit.h"
+#import "Constantes.h"
 
 @interface NovoViewController : UIViewController <UIActionSheetDelegate>
 {
     @private CustomActivityIndicatorView* carregandoTela;
+    @private NSMutableDictionary* dictConteudoServicos;
+    @private NSMutableDictionary* dictConteudoDentistas;
+    @private NSMutableDictionary* dictConteudoHorarios;
+    @private NSMutableDictionary* dictMapHorariosFuncionarios;
 }
 
 @property (strong, nonatomic) IBOutlet UIScrollView *svTela;

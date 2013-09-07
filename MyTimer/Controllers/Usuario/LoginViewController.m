@@ -139,7 +139,6 @@
         [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.nome"] forKey:@"nome"];
         [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.dataNascimento"] forKey:@"dataNascimento"];
         [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.login"] forKey:@"login"];
-        [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.senha"] forKey:@"senha"];
         [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.cpf"] forKey:@"cpf"];
         [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.contato.email"] forKey:@"email"];
         NSError *error;

@@ -21,7 +21,10 @@
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
-    txtAssociado.text = [[dictConteudo allValues] objectAtIndex:0];
+    arrOrdenado = [[dictConteudo allValues] sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
+    NSString* selecionado = [arrOrdenado objectAtIndex:0];
+    txtAssociado.text = selecionado;
+    txtAssociado.accessibilityValue = [dictConteudo allKeysForObject:selecionado][0];
 	return 1;
 }
 
@@ -30,11 +33,13 @@
 }
 
 - (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-	return [[dictConteudo allValues] objectAtIndex:row];
+	return [arrOrdenado objectAtIndex:row];
 
 }
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    txtAssociado.text = [[dictConteudo allValues] objectAtIndex:row];
+    NSString* selecionado = [arrOrdenado objectAtIndex:row];
+    txtAssociado.text = selecionado;
+    txtAssociado.accessibilityValue = [dictConteudo allKeysForObject:selecionado][0];
 }
 
 @end

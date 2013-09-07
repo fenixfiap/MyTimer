@@ -21,16 +21,14 @@
     self.txtDentista.inputAccessoryView = keyboard;
     self.txtHorario.inputAccessoryView = keyboard;
     
-    self.txtServico.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtServico andContent:[NSDictionary dictionaryWithObjectsAndKeys: @"LIMPEZA", @"1", @"CONSULTA", @"2", @"OBTURAÇÃO", @"3", nil]];
+    [self listarServicos];
+    
     self.txtData.inputView = [[CustomDatePicker alloc] initWithFrame:CGRectZero andTextField:self.txtData];
-    self.txtDentista.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtDentista andContent:[NSDictionary dictionaryWithObjectsAndKeys: @"JOÃO BARROS", @"1", @"MARIA LUIZA", @"2", nil]];
-    self.txtHorario.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtHorario andContent:[NSDictionary dictionaryWithObjectsAndKeys: @"09:00", @"1", @"09:30", @"2", @"10:00", @"3", nil]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alteraServico) name:UITextFieldTextDidEndEditingNotification object:self.txtServico];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alteraData) name:UITextFieldTextDidEndEditingNotification object:self.txtData];
     [self.scPreferencia addTarget:self action:@selector(alteraPreferencia) forControlEvents:UIControlEventValueChanged];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alteraDentista) name:UITextFieldTextDidEndEditingNotification object:self.txtDentista];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alteraHorario) name:UITextFieldTextDidEndEditingNotification object:self.txtHorario];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,7 +41,35 @@
 - (IBAction)agendar:(UIButton *)sender {
     carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
     [self.view addSubview:carregandoTela];
-    [self validaCampos];
+    if ([self validaCampos]) {
+        NSManagedObjectContext *context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entity = [NSEntityDescription
+                                       entityForName:@"Usuario" inManagedObjectContext:context];
+        [fetchRequest setEntity:entity];
+        NSError *error;
+        NSArray* fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+        NSString* cpf = [((NSManagedObject*)fetchedObjects[0]) valueForKey:@"cpf"];
+        
+        NSURL *url = [NSURL URLWithString:SERVICO_AGENDAR];
+        ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+        [request setRequestMethod:@"POST"];
+        [request addPostValue:self.txtServico.accessibilityValue forKey:@"idServico"];
+        [request addPostValue:cpf forKey:@"cpfCliente"];
+        [request addPostValue:self.txtData.text forKey:@"data"];
+        [request addPostValue:self.txtHorario.text forKey:@"horario"];
+        if (self.scPreferencia.selectedSegmentIndex == 0) {
+            [request addPostValue:self.txtDentista.accessibilityValue forKey:@"idFuncionario"];
+        }
+        else {
+            [request addPostValue:[[dictMapHorariosFuncionarios objectForKey:self.txtHorario.text] valueForKey:@"id"] forKey:@"idFuncionario"];
+        }
+//        [request addPostValue:self.scPreferencia.selectedSegmentIndex forKey:@"preferencia"];
+        [request setShowAccurateProgress:YES];
+        [request setUploadProgressDelegate:self];
+        [request setDelegate:self];
+        [request startAsynchronous];
+    }
 }
 
 - (IBAction)cancelaNovo:(UIBarButtonItem *)sender
@@ -55,6 +81,53 @@
                                   destructiveButtonTitle:@"Sim"
                                   otherButtonTitles: nil];
     [actionSheet showInView:self.view.window];
+}
+
+-(void) listarServicos
+{
+    NSURL *url = [NSURL URLWithString:SERVICO_LISTAR_SERVICOS];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request setRequestMethod:@"GET"];
+    [request setShowAccurateProgress:YES];
+    [request setUploadProgressDelegate:self];
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
+
+
+-(void) listarDentistas
+{
+    NSURL *url = [NSURL URLWithString:SERVICO_LISTAR_DENTISTAS];
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request setRequestMethod:@"GET"];
+    [request setShowAccurateProgress:YES];
+    [request setUploadProgressDelegate:self];
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
+
+-(void) listarHorarios
+{
+    NSURL *url = [NSURL URLWithString:SERVICO_LISTAR_HORARIOS];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request setRequestMethod:@"POST"];
+    [request addPostValue:self.txtData.text forKey:@"data"];
+    [request setShowAccurateProgress:YES];
+    [request setUploadProgressDelegate:self];
+    [request setDelegate:self];
+    [request startAsynchronous];
+}
+-(void) listarHorariosDentista
+{
+    NSURL *url = [NSURL URLWithString:SERVICO_LISTAR_HORARIOS_DENTISTA];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request setRequestMethod:@"POST"];
+    [request addPostValue:self.txtData.text forKey:@"data"];
+    [request addPostValue:self.txtDentista.accessibilityValue forKey:@"idFuncionario"];
+    [request setShowAccurateProgress:YES];
+    [request setUploadProgressDelegate:self];
+    [request setDelegate:self];
+    [request startAsynchronous];
 }
 
 -(void) alteraServico
@@ -102,27 +175,22 @@
 -(void) alteraPreferencia
 {
     if (self.scPreferencia.selectedSegmentIndex == 0)
-        self.txtDentista.enabled = YES;
+    {
+        [self listarDentistas];
+    }
     else
+    {
         self.txtDentista.enabled = NO;
-    
-    self.txtHorario.enabled = YES;
+        [self listarHorarios];
+    }
     self.txtDentista.text = @"";
     self.txtHorario.text = @"";
 }
 
 -(void) alteraDentista
 {
-    self.txtHorario.enabled = YES;
+    [self listarHorariosDentista];
     self.txtHorario.text = @"";
-}
-
--(void) alteraHorario
-{
-    if (self.scPreferencia.selectedSegmentIndex == 1)
-    {
-        
-    }
 }
 
 -(BOOL)validaCampos
@@ -173,6 +241,86 @@
     {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
+}
+
+#pragma mark - Métodos Request Delegate
+
+- (void)requestFailed:(ASIHTTPRequest *)request{
+    NSLog(@"Response %d ==> %@", request.responseStatusCode, [request responseString]);
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de conexão:" message:@"Não foi possível se conectar com o serviço. Verique sua conexão e tente novamente." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
+}
+
+- (void)requestFinished:(ASIFormDataRequest *)request {
+    NSLog(@"Response %d ==> %@", request.responseStatusCode, [request responseString]);
+    NSString * servicoAtual = [NSString stringWithFormat:@"%@", request.url];
+    
+    if ([servicoAtual isEqualToString:SERVICO_LISTAR_SERVICOS]) {
+        if (request.responseStatusCode == 200) {
+            NSArray *arrRetorno = (NSArray*)[request.responseData objectFromJSONData];
+            dictConteudoServicos = [[NSMutableDictionary alloc] init];
+            for (NSDictionary* dictServico in arrRetorno) {
+                [dictConteudoServicos setValue:[dictServico valueForKey:@"nome"] forKey:[dictServico valueForKey:@"id"]];
+            }
+            self.txtServico.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtServico andContent:dictConteudoServicos];
+        }
+        else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível se comunicar com o serviço." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }
+    else if ([servicoAtual isEqualToString:SERVICO_LISTAR_HORARIOS]) {
+        if (request.responseStatusCode == 200) {
+            NSDictionary *dictRetorno = (NSDictionary*)[request.responseData objectFromJSONData];
+            NSArray* arrHorarios = [dictRetorno valueForKey:@"horarios"];
+            dictConteudoHorarios = [[NSMutableDictionary alloc] initWithObjects:arrHorarios forKeys:arrHorarios];
+            self.txtHorario.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtHorario andContent:dictConteudoHorarios];
+            self.txtHorario.enabled = YES;
+            dictMapHorariosFuncionarios = [dictRetorno valueForKey:@"horariosFuncionarios"];
+        }
+        else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível se comunicar com o serviço." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }
+    else if ([servicoAtual isEqualToString:SERVICO_LISTAR_DENTISTAS]) {
+        if (request.responseStatusCode == 200) {
+            NSArray *arrRetorno = (NSArray*)[request.responseData objectFromJSONData];
+            dictConteudoDentistas = [[NSMutableDictionary alloc] init];
+            for (NSDictionary* dictDentista in arrRetorno) {
+                [dictConteudoDentistas setValue:[dictDentista valueForKeyPath:@"pessoa.nome"] forKey:[dictDentista valueForKeyPath:@"id"]];
+            }
+            self.txtDentista.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtDentista andContent:dictConteudoDentistas];
+            self.txtDentista.enabled = YES;
+        }
+        else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível se comunicar com o serviço." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }
+    else if ([servicoAtual isEqualToString:SERVICO_LISTAR_HORARIOS_DENTISTA]) {
+        if (request.responseStatusCode == 200) {
+            NSArray* arrHorarios = (NSArray*)[request.responseData objectFromJSONData];
+            dictConteudoHorarios = [[NSMutableDictionary alloc] initWithObjects:arrHorarios forKeys:arrHorarios];
+            self.txtHorario.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtHorario andContent:dictConteudoHorarios];
+            self.txtHorario.enabled = YES;
+        }
+        else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível se comunicar com o serviço." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }
+    else if ([servicoAtual isEqualToString:SERVICO_AGENDAR]) {
+        if (request.responseStatusCode == 200) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Agendamento:" message:@"Agendamento realizado com sucesso!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+        else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível se comunicar com o serviço." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alert show];
+        }
+    }
+
 }
 
 @end
