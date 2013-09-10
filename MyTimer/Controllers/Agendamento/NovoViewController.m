@@ -101,7 +101,7 @@
 {
     carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
     [self.view addSubview:carregandoTela];
-    NSURL *url = [NSURL URLWithString:SERVICO_LISTAR_DENTISTAS];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:SERVICO_LISTAR_DENTISTAS, self.txtServico.accessibilityValue]];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setRequestMethod:@"GET"];
     [request setShowAccurateProgress:YES];
@@ -307,11 +307,12 @@
             }
         }
         else {
+            self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os horários. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }
-    else if ([servicoAtual isEqualToString:SERVICO_LISTAR_DENTISTAS]) {
+    else if ([servicoAtual isEqualToString:[NSString stringWithFormat:SERVICO_LISTAR_DENTISTAS, self.txtServico.accessibilityValue]]) {
         if (request.responseStatusCode == 200) {
             NSArray *arrRetorno = (NSArray*)[request.responseData objectFromJSONData];
             dictConteudoDentistas = [[NSMutableDictionary alloc] init];
@@ -322,6 +323,7 @@
             self.txtDentista.enabled = YES;
         }
         else {
+            self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os dentistas. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
