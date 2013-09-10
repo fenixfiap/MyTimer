@@ -24,7 +24,7 @@
     arrOrdenado = [[dictConteudo allValues] sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
     NSString* selecionado = [arrOrdenado objectAtIndex:0];
     txtAssociado.text = selecionado;
-    txtAssociado.accessibilityValue = [dictConteudo allKeysForObject:selecionado][0];
+    txtAssociado.accessibilityValue = [NSString stringWithFormat:@"%@", [dictConteudo allKeysForObject:selecionado][0]];
 	return 1;
 }
 
@@ -39,7 +39,7 @@
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSString* selecionado = [arrOrdenado objectAtIndex:row];
     txtAssociado.text = selecionado;
-    txtAssociado.accessibilityValue = [dictConteudo allKeysForObject:selecionado][0];
+    txtAssociado.accessibilityValue = [NSString stringWithFormat:@"%@", [dictConteudo allKeysForObject:selecionado][0]];
 }
 
 @end

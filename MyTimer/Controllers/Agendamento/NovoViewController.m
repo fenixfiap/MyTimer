@@ -64,7 +64,7 @@
         else {
             [request addPostValue:[[dictMapHorariosFuncionarios objectForKey:self.txtHorario.text] valueForKey:@"id"] forKey:@"idFuncionario"];
         }
-//        [request addPostValue:self.scPreferencia.selectedSegmentIndex forKey:@"preferencia"];
+        [request addPostValue:self.scPreferencia.selectedSegmentIndex == 0? @"true" : @"false" forKey:@"preferencia"];
         [request setShowAccurateProgress:YES];
         [request setUploadProgressDelegate:self];
         [request setDelegate:self];
@@ -85,6 +85,8 @@
 
 -(void) listarServicos
 {
+    carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
+    [self.view addSubview:carregandoTela];
     NSURL *url = [NSURL URLWithString:SERVICO_LISTAR_SERVICOS];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setRequestMethod:@"GET"];
@@ -97,6 +99,8 @@
 
 -(void) listarDentistas
 {
+    carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
+    [self.view addSubview:carregandoTela];
     NSURL *url = [NSURL URLWithString:SERVICO_LISTAR_DENTISTAS];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setRequestMethod:@"GET"];
@@ -108,6 +112,8 @@
 
 -(void) listarHorarios
 {
+    carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
+    [self.view addSubview:carregandoTela];
     NSURL *url = [NSURL URLWithString:SERVICO_LISTAR_HORARIOS];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setRequestMethod:@"POST"];
@@ -119,10 +125,13 @@
 }
 -(void) listarHorariosDentista
 {
+    carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
+    [self.view addSubview:carregandoTela];
     NSURL *url = [NSURL URLWithString:SERVICO_LISTAR_HORARIOS_DENTISTA];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setRequestMethod:@"POST"];
     [request addPostValue:self.txtData.text forKey:@"data"];
+    NSLog(@"%@", self.txtDentista.accessibilityValue);
     [request addPostValue:self.txtDentista.accessibilityValue forKey:@"idFuncionario"];
     [request setShowAccurateProgress:YES];
     [request setUploadProgressDelegate:self];
@@ -132,6 +141,9 @@
 
 -(void) alteraServico
 {
+    [dictConteudoDentistas removeAllObjects];
+    [dictConteudoHorarios removeAllObjects];
+    [dictMapHorariosFuncionarios removeAllObjects];
     self.txtData.enabled = YES;
     self.scPreferencia.enabled = NO;
     self.txtDentista.enabled = NO;
@@ -168,12 +180,18 @@
             self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
             self.txtDentista.text = @"";
             self.txtHorario.text = @"";
+            [dictConteudoDentistas removeAllObjects];
+            [dictConteudoHorarios removeAllObjects];
+            [dictMapHorariosFuncionarios removeAllObjects];
         }
     }
 }
 
 -(void) alteraPreferencia
 {
+    [dictConteudoDentistas removeAllObjects];
+    [dictConteudoHorarios removeAllObjects];
+    [dictMapHorariosFuncionarios removeAllObjects];
     if (self.scPreferencia.selectedSegmentIndex == 0)
     {
         [self listarDentistas];
@@ -183,12 +201,14 @@
         self.txtDentista.enabled = NO;
         [self listarHorarios];
     }
+    self.txtHorario.enabled = NO;
     self.txtDentista.text = @"";
     self.txtHorario.text = @"";
 }
 
 -(void) alteraDentista
 {
+    [dictConteudoHorarios removeAllObjects];
     [self listarHorariosDentista];
     self.txtHorario.text = @"";
 }
@@ -247,12 +267,18 @@
 
 - (void)requestFailed:(ASIHTTPRequest *)request{
     NSLog(@"Response %d ==> %@", request.responseStatusCode, [request responseString]);
+    [UIView animateWithDuration:0.5
+                     animations:^{carregandoTela.alpha = 0.0;}
+                     completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de conexão:" message:@"Não foi possível se conectar com o serviço. Verique sua conexão e tente novamente." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
 }
 
 - (void)requestFinished:(ASIFormDataRequest *)request {
     NSLog(@"Response %d ==> %@", request.responseStatusCode, [request responseString]);
+    [UIView animateWithDuration:0.5
+                     animations:^{carregandoTela.alpha = 0.0;}
+                     completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
     NSString * servicoAtual = [NSString stringWithFormat:@"%@", request.url];
     
     if ([servicoAtual isEqualToString:SERVICO_LISTAR_SERVICOS]) {
@@ -265,7 +291,7 @@
             self.txtServico.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtServico andContent:dictConteudoServicos];
         }
         else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível se comunicar com o serviço." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os serviços. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }
@@ -276,10 +302,12 @@
             dictConteudoHorarios = [[NSMutableDictionary alloc] initWithObjects:arrHorarios forKeys:arrHorarios];
             self.txtHorario.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtHorario andContent:dictConteudoHorarios];
             self.txtHorario.enabled = YES;
-            dictMapHorariosFuncionarios = [dictRetorno valueForKey:@"horariosFuncionarios"];
+            if (dictRetorno) {
+                dictMapHorariosFuncionarios = [[NSMutableDictionary alloc] initWithDictionary:[dictRetorno valueForKey:@"horariosFuncionarios"]];
+            }
         }
         else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível se comunicar com o serviço." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os horários. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }
@@ -294,7 +322,7 @@
             self.txtDentista.enabled = YES;
         }
         else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível se comunicar com o serviço." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os dentistas. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }
@@ -306,17 +334,18 @@
             self.txtHorario.enabled = YES;
         }
         else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível se comunicar com o serviço." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os horários do dentista selecionado. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }
     else if ([servicoAtual isEqualToString:SERVICO_AGENDAR]) {
         if (request.responseStatusCode == 200) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Agendamento:" message:@"Agendamento realizado com sucesso!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sucesso:" message:@"Agendamento realizado!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
         else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível se comunicar com o serviço." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível realizar o agendamento. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }

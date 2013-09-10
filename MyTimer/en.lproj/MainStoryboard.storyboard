@@ -13,29 +13,27 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="fnN-Ly-AEj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" minimumFontSize="17" clearButtonMode="whileEditing" id="SfC-jo-Zkr">
-                                        <rect key="frame" x="20" y="181" width="280" height="30"/>
+                                        <rect key="frame" x="20" y="137" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" red="0.054430885040000002" green="0.29120095800000001" blue="0.50031364050000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" minimumFontSize="17" clearButtonMode="whileEditing" id="38T-6L-Jq6">
-                                        <rect key="frame" x="20" y="219" width="280" height="30"/>
+                                        <rect key="frame" x="20" y="175" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" red="0.054430885040000002" green="0.29120095800000001" blue="0.50031364050000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="naE-AF-Oev">
-                                        <rect key="frame" x="113" y="286" width="95" height="44"/>
+                                        <rect key="frame" x="113" y="242" width="95" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Entrar">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.81592793370000005" green="0.54553461489999999" blue="0.1638736221" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="highlighted">
@@ -46,33 +44,25 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mt-logo.png" id="Us7-0U-gHT">
-                                        <rect key="frame" x="32" y="66" width="234" height="39"/>
+                                        <rect key="frame" x="32" y="22" width="234" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mt-clock.png" id="4R0-4I-PYS">
-                                        <rect key="frame" x="241" y="87" width="48" height="48"/>
+                                        <rect key="frame" x="241" y="43" width="48" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <navigationBar contentMode="scaleToFill" id="ryo-9P-dbG">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <items>
-                                            <navigationItem title="Login" id="6h1-Y6-6tB"/>
-                                        </items>
-                                    </navigationBar>
                                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Usuario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tMR-KI-jow">
-                                        <rect key="frame" x="20" y="257" width="280" height="21"/>
+                                        <rect key="frame" x="20" y="213" width="280" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.054430885040000002" green="0.29120095800000001" blue="0.50031364050000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="efh-Jj-uVe">
-                                        <rect key="frame" x="113" y="337" width="95" height="44"/>
+                                        <rect key="frame" x="113" y="293" width="95" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Continuar">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.81592793370000005" green="0.54553461489999999" blue="0.1638736221" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="highlighted">
@@ -84,8 +74,16 @@
                                     </button>
                                 </subviews>
                             </scrollView>
+                            <navigationBar contentMode="scaleToFill" id="ryo-9P-dbG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.81592793370000005" green="0.54553461489999999" blue="0.1638736221" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Login" id="6h1-Y6-6tB"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.82745098039999998" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="xee-Ms-fHn"/>
                     <connections>
@@ -117,14 +115,12 @@
                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Serviço" minimumFontSize="17" id="6vp-UC-e0D">
                                         <rect key="frame" x="20" y="129" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" red="0.054430885040000002" green="0.29120095800000001" blue="0.50031364050000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Data" minimumFontSize="17" id="4Vp-1k-xCi">
                                         <rect key="frame" x="20" y="167" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" red="0.054430885040000002" green="0.29120095800000001" blue="0.50031364050000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -132,20 +128,17 @@
                                         <rect key="frame" x="20" y="208" width="190" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" red="0.054430885040000002" green="0.29120095800000001" blue="0.50031364050000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Dentista" minimumFontSize="17" id="cee-I7-hhl">
                                         <rect key="frame" x="20" y="240" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" red="0.054430885040000002" green="0.29120095800000001" blue="0.50031364050000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Horário" minimumFontSize="17" id="U2w-7V-2fA">
                                         <rect key="frame" x="20" y="278" width="97" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <color key="textColor" red="0.054430885040000002" green="0.29120095800000001" blue="0.50031364050000005" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -154,7 +147,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Salvar">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="highlighted">
@@ -179,12 +172,14 @@
                                             <segment title="Sim"/>
                                             <segment title="Não"/>
                                         </segments>
+                                        <color key="tintColor" red="0.81592793370000005" green="0.54553461489999999" blue="0.1638736221" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                 </subviews>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" id="uDE-Sy-YGV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.81592793370000005" green="0.54553461489999999" blue="0.1638736221" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Novo" id="04F-tN-jA6">
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" style="plain" id="0mC-mF-lnk">
@@ -196,7 +191,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.82745098039999998" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="KbU-IT-ZQX"/>
                     <connections>
@@ -223,7 +218,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="eME-eB-8RG">
                                 <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.82745098039999998" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" textLabel="L6K-fZ-4Vf" detailTextLabel="nqt-rQ-FH8" rowHeight="100" style="IBUITableViewCellStyleSubtitle" id="01I-ag-PNQ">
                                         <rect key="frame" x="0.0" y="22" width="320" height="100"/>
@@ -236,14 +231,13 @@
                                                     <rect key="frame" x="10" y="33" width="31" height="19"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" red="0.054430885040000002" green="0.29120095800000001" blue="0.50031364050000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nqt-rQ-FH8">
                                                     <rect key="frame" x="10" y="52" width="41" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.071936762979999999" green="0.46466282580000001" blue="0.79753268489999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
@@ -258,6 +252,7 @@
                             <navigationBar contentMode="scaleToFill" id="fe9-Uk-eEQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.81592793370000005" green="0.54553461489999999" blue="0.1638736221" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Agendamentos" id="9pb-Hj-wQe">
                                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="R3I-qz-RGd">
