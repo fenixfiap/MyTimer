@@ -13,16 +13,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    refresh = [[UIRefreshControl alloc]init];
+    refresh.tintColor = [UIColor colorWithRed:208.0f/255.0f green:139.0f/255.0f blue:42.0f/255.0f alpha:1.0f];
+    [refresh addTarget:self action:@selector(listaAgendamentos) forControlEvents:UIControlEventValueChanged];
+    [self.tbAgendamentos addSubview:refresh];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    refresh = [[UIRefreshControl alloc]init];
-    refresh.tintColor = [UIColor colorWithRed:208.0f/255.0f green:139.0f/255.0f blue:42.0f/255.0f alpha:1.0f];
-    [refresh addTarget:self action:@selector(listaAgendamentos) forControlEvents:UIControlEventValueChanged];
-    [self.tbAgendamentos addSubview:refresh];
     [refresh beginRefreshing];
     
     [self listaAgendamentos];

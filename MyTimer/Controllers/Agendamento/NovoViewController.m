@@ -41,6 +41,7 @@
 - (IBAction)agendar:(UIButton *)sender {
     carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
     [self.view addSubview:carregandoTela];
+    self.btnSalvar.enabled = NO;
     if ([self validaCampos]) {
         NSManagedObjectContext *context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -59,7 +60,7 @@
         [request addPostValue:self.txtData.text forKey:@"data"];
         [request addPostValue:self.txtHorario.text forKey:@"horario"];
         if (self.scPreferencia.selectedSegmentIndex == 0) {
-            [request addPostValue:self.txtDentista.accessibilityValue forKey:@"idFuncionario"];
+            [request addPostValue:[NSString stringWithFormat:@"%@", self.txtDentista.accessibilityValue] forKey:@"idFuncionario"];
         }
         else {
             [request addPostValue:[[dictMapHorariosFuncionarios objectForKey:self.txtHorario.text] valueForKey:@"id"] forKey:@"idFuncionario"];
@@ -196,7 +197,7 @@
     {
         [self listarDentistas];
     }
-    else
+    else if (self.scPreferencia.selectedSegmentIndex == 1)
     {
         self.txtDentista.enabled = NO;
         [self listarHorarios];
@@ -272,6 +273,7 @@
                      completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de conexão:" message:@"Não foi possível se conectar com o serviço. Verique sua conexão e tente novamente." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)requestFinished:(ASIFormDataRequest *)request {
@@ -308,6 +310,7 @@
         }
         else {
             self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
+            [self alteraPreferencia];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os horários. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
@@ -324,6 +327,7 @@
         }
         else {
             self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
+            [self alteraPreferencia];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os dentistas. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
@@ -336,6 +340,8 @@
             self.txtHorario.enabled = YES;
         }
         else {
+            self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
+            [self alteraPreferencia];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os horários do dentista selecionado. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
@@ -347,8 +353,11 @@
             [self dismissViewControllerAnimated:YES completion:nil];
         }
         else {
+            self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
+            [self alteraPreferencia];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível realizar o agendamento. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
+            self.btnSalvar.enabled = YES;
         }
     }
 

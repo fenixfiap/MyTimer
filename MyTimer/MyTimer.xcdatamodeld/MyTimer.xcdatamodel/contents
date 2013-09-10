@@ -6,11 +6,10 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="idCliente" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="idPessoa" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rg" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Usuario" positionX="351" positionY="72" width="128" height="163"/>
+        <element name="Usuario" positionX="351" positionY="72" width="128" height="148"/>
     </elements>
 </model>

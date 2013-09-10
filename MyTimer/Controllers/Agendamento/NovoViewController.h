@@ -32,6 +32,7 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *scPreferencia;
 @property (strong, nonatomic) IBOutlet UITextField *txtDentista;
 @property (strong, nonatomic) IBOutlet UITextField *txtHorario;
+@property (strong, nonatomic) IBOutlet UIButton *btnSalvar;
 
 - (IBAction)agendar:(UIButton *)sender;
 - (IBAction)cancelaNovo:(UIBarButtonItem *)sender;

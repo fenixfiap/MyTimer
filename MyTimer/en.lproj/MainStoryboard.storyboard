@@ -62,7 +62,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Continuar">
-                                            <color key="titleColor" red="0.81592793370000005" green="0.54553461489999999" blue="0.1638736221" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="highlighted">
@@ -195,6 +195,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="KbU-IT-ZQX"/>
                     <connections>
+                        <outlet property="btnSalvar" destination="Y4U-6N-fTi" id="cUu-Au-WK3"/>
                         <outlet property="scPreferencia" destination="fak-g0-ZkO" id="TGY-bh-u0T"/>
                         <outlet property="svTela" destination="fOf-d0-4BH" id="uyI-LG-mqO"/>
                         <outlet property="txtData" destination="4Vp-1k-xCi" id="r1w-v7-amC"/>
