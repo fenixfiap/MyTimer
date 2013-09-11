@@ -291,6 +291,7 @@
                 [dictConteudoServicos setValue:[dictServico valueForKey:@"nome"] forKey:[dictServico valueForKey:@"id"]];
             }
             self.txtServico.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtServico andContent:dictConteudoServicos];
+            self.txtServico.enabled = YES;
         }
         else {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os serviços. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];

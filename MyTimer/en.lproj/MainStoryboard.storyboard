@@ -112,7 +112,7 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Serviço" minimumFontSize="17" id="6vp-UC-e0D">
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Serviço" minimumFontSize="17" id="6vp-UC-e0D">
                                         <rect key="frame" x="20" y="129" width="280" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -305,6 +305,7 @@
             <relationships>
                 <relationship kind="action" name="agendar:" candidateClass="UIButton"/>
                 <relationship kind="action" name="cancelaNovo:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="btnSalvar" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="scPreferencia" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="svTela" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="txtData" candidateClass="UITextField"/>
