@@ -104,7 +104,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     NSDictionary* agendamento = [arrAgendamentos objectAtIndex:indexPath.row];
     @try {
-        cell.textLabel.text = [NSString stringWithFormat:@"Serviço: %@ \nProfissional: %@",[agendamento valueForKeyPath:@"servico.nome"],[agendamento valueForKeyPath:@"funcionario.pessoa.nome"]];
+        NSString* funcionario = [agendamento valueForKeyPath:@"funcionario.pessoa.nome"];
+        cell.textLabel.text = [NSString stringWithFormat:@"Serviço: %@ \nProfissional: %@",[agendamento valueForKeyPath:@"servico.nome"], [funcionario isKindOfClass:NSNull.class] ? @"" : funcionario];
         cell.detailTextLabel.text = [NSString stringWithFormat:@"Data: %@ \nStatus: %@",[agendamento valueForKey:@"data"],[agendamento valueForKey:@"statusFormatado"]];
     }
     @catch (NSException *exception) {

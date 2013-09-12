@@ -41,7 +41,7 @@
 - (IBAction)agendar:(UIButton *)sender {
     carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
     [self.view addSubview:carregandoTela];
-    self.btnSalvar.enabled = NO;
+    self.view.userInteractionEnabled = NO;
     if ([self validaCampos]) {
         NSManagedObjectContext *context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -63,7 +63,7 @@
             [request addPostValue:[NSString stringWithFormat:@"%@", self.txtDentista.accessibilityValue] forKey:@"idFuncionario"];
         }
         else {
-            [request addPostValue:[[dictMapHorariosFuncionarios objectForKey:self.txtHorario.text] valueForKey:@"id"] forKey:@"idFuncionario"];
+            [request addPostValue:[[dictMapHorariosFuncionarios objectForKey:self.txtHorario.text][0] valueForKey:@"id"] forKey:@"idFuncionario"];
         }
         [request addPostValue:self.scPreferencia.selectedSegmentIndex == 0? @"true" : @"false" forKey:@"preferencia"];
         [request setShowAccurateProgress:YES];
@@ -119,6 +119,7 @@
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setRequestMethod:@"POST"];
     [request addPostValue:self.txtData.text forKey:@"data"];
+    [request addPostValue:self.txtServico.accessibilityValue forKey:@"idServico"];
     [request setShowAccurateProgress:YES];
     [request setUploadProgressDelegate:self];
     [request setDelegate:self];
@@ -132,7 +133,7 @@
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setRequestMethod:@"POST"];
     [request addPostValue:self.txtData.text forKey:@"data"];
-    NSLog(@"%@", self.txtDentista.accessibilityValue);
+    [request addPostValue:self.txtServico.accessibilityValue forKey:@"idServico"];
     [request addPostValue:self.txtDentista.accessibilityValue forKey:@"idFuncionario"];
     [request setShowAccurateProgress:YES];
     [request setUploadProgressDelegate:self];
@@ -358,7 +359,7 @@
             [self alteraPreferencia];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível realizar o agendamento. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
-            self.btnSalvar.enabled = YES;
+            self.view.userInteractionEnabled = YES;
         }
     }
 
