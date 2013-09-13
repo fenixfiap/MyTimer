@@ -134,12 +134,9 @@
                                            insertNewObjectForEntityForName:@"Usuario"
                                     inManagedObjectContext:context];
         [usuario setValue:[dicRetorno valueForKey:@"id"] forKey:@"idCliente"];
-        [usuario setValue:[dicRetorno valueForKey:@"rg"] forKey:@"rg"];
         [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.id"] forKey:@"idPessoa"];
         [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.nome"] forKey:@"nome"];
-        [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.dataNascimento"] forKey:@"dataNascimento"];
         [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.cpf"] forKey:@"cpf"];
-        [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.contato.email"] forKey:@"email"];
         NSError *error;
         if (![context save:&error])
         {
