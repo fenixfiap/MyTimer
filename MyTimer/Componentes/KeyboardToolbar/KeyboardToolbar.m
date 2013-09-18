@@ -1,9 +1,9 @@
 //
 //  KeyboardToolbar.m
-//  HeroiDaCidade
+//  MyTimer
 //
-//  Created by William Gomes on 7/22/13.
-//  Copyright (c) 2013 Call. All rights reserved.
+//  Created by Gabriel Moraes on 7/22/13.
+//  Copyright (c) 2013 Fenix. All rights reserved.
 //
 
 #import "KeyboardToolbar.h"

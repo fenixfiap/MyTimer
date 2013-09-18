@@ -1,9 +1,9 @@
 //
 //  CustomDatePicker.h
-//  HeroiDaCidade
+//  MyTimer
 //
 //  Created by Gabriel Moraes on 02/08/13.
-//  Copyright (c) 2013 Call. All rights reserved.
+//  Copyright (c) 2013 Fenix. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
