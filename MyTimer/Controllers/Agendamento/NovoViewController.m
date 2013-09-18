@@ -202,6 +202,8 @@
     {
         self.txtDentista.enabled = NO;
         [self listarHorarios];
+    } else {
+        self.txtDentista.enabled = NO;
     }
     self.txtHorario.enabled = NO;
     self.txtDentista.text = @"";
@@ -303,11 +305,17 @@
         if (request.responseStatusCode == 200) {
             NSDictionary *dictRetorno = (NSDictionary*)[request.responseData objectFromJSONData];
             NSArray* arrHorarios = [dictRetorno valueForKey:@"horarios"];
-            dictConteudoHorarios = [[NSMutableDictionary alloc] initWithObjects:arrHorarios forKeys:arrHorarios];
-            self.txtHorario.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtHorario andContent:dictConteudoHorarios];
-            self.txtHorario.enabled = YES;
-            if (dictRetorno) {
+            if (![arrHorarios isKindOfClass:[NSNull class]]) {
+                dictConteudoHorarios = [[NSMutableDictionary alloc] initWithObjects:arrHorarios forKeys:arrHorarios];
+                self.txtHorario.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtHorario andContent:dictConteudoHorarios];
+                self.txtHorario.enabled = YES;
                 dictMapHorariosFuncionarios = [[NSMutableDictionary alloc] initWithDictionary:[dictRetorno valueForKey:@"horariosFuncionarios"]];
+            }
+            else {
+                self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
+                [self alteraPreferencia];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:@"Não existe horários disponíveis para a data selecionada." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alert show];
             }
         }
         else {
@@ -344,7 +352,7 @@
         else {
             self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
             [self alteraPreferencia];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os horários do dentista selecionado. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:@"O dentista não possui horários disponíveis para a data selecionada." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }

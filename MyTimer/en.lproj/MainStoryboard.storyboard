@@ -43,12 +43,8 @@
                                             <action selector="autentica:" destination="2" eventType="touchUpInside" id="vAc-8U-J1j"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mt-logo.png" id="Us7-0U-gHT">
-                                        <rect key="frame" x="32" y="22" width="234" height="39"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mt-clock.png" id="4R0-4I-PYS">
-                                        <rect key="frame" x="241" y="43" width="48" height="48"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mytimer-fundobranco.png" id="Us7-0U-gHT">
+                                        <rect key="frame" x="76" y="20" width="168" height="97"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Usuario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tMR-KI-jow">
@@ -77,7 +73,7 @@
                             <navigationBar contentMode="scaleToFill" id="ryo-9P-dbG">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.81592793370000005" green="0.54553461489999999" blue="0.1638736221" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.92814781021897808" green="0.6945711678832116" blue="0.12867814781021897" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Login" id="6h1-Y6-6tB"/>
                                 </items>
@@ -157,12 +153,8 @@
                                             <action selector="agendar:" destination="NoC-Ml-yR4" eventType="touchUpInside" id="RkX-XA-8Z7"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mt-logo.png" id="cUc-8I-Zdi">
-                                        <rect key="frame" x="32" y="20" width="234" height="39"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mt-clock.png" id="Va4-u9-Rai">
-                                        <rect key="frame" x="241" y="41" width="48" height="48"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="mytimer-fundobranco.png" id="cUc-8I-Zdi">
+                                        <rect key="frame" x="76" y="20" width="168" height="97"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" id="fak-g0-ZkO">
@@ -172,14 +164,14 @@
                                             <segment title="Sim"/>
                                             <segment title="Não"/>
                                         </segments>
-                                        <color key="tintColor" red="0.81592793370000005" green="0.54553461489999999" blue="0.1638736221" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.92814781020000003" green="0.69457116789999995" blue="0.1286781478" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                 </subviews>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" id="uDE-Sy-YGV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.81592793370000005" green="0.54553461489999999" blue="0.1638736221" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.92814781020000003" green="0.69457116789999995" blue="0.1286781478" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Novo" id="04F-tN-jA6">
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" style="plain" id="0mC-mF-lnk">
@@ -253,7 +245,7 @@
                             <navigationBar contentMode="scaleToFill" id="fe9-Uk-eEQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.81592793370000005" green="0.54553461489999999" blue="0.1638736221" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.92814781020000003" green="0.69457116789999995" blue="0.1286781478" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Agendamentos" id="9pb-Hj-wQe">
                                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="R3I-qz-RGd">
@@ -283,8 +275,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="mt-clock.png" width="128" height="128"/>
-        <image name="mt-logo.png" width="289" height="65"/>
+        <image name="mytimer-fundobranco.png" width="1127" height="666"/>
     </resources>
     <classes>
         <class className="LoginViewController" superclassName="UIViewController">

@@ -15,7 +15,7 @@
     [super viewDidLoad];
     
     refresh = [[UIRefreshControl alloc]init];
-    refresh.tintColor = [UIColor colorWithRed:208.0f/255.0f green:139.0f/255.0f blue:42.0f/255.0f alpha:1.0f];
+    refresh.tintColor = [UIColor colorWithRed:237.0f/255.0f green:177.0f/255.0f blue:33.0f/255.0f alpha:1.0f];
     [refresh addTarget:self action:@selector(listaAgendamentos) forControlEvents:UIControlEventValueChanged];
     [self.tbAgendamentos addSubview:refresh];
 }

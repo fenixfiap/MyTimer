@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF35E82E17EA018D0042F702 /* mytimer-fundopreto.png in Resources */ = {isa = PBXBuildFile; fileRef = AF35E82C17EA018D0042F702 /* mytimer-fundopreto.png */; };
+		AF35E82F17EA018D0042F702 /* mytimer-fundobranco.png in Resources */ = {isa = PBXBuildFile; fileRef = AF35E82D17EA018D0042F702 /* mytimer-fundobranco.png */; };
 		AFCD4B0F17D77050001F0FD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4B0E17D77050001F0FD5 /* UIKit.framework */; };
 		AFCD4B1117D77050001F0FD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4B1017D77050001F0FD5 /* Foundation.framework */; };
 		AFCD4B1317D77050001F0FD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4B1217D77050001F0FD5 /* CoreGraphics.framework */; };
@@ -35,8 +37,6 @@
 		AFCD4B9B17D770E1001F0FD5 /* NovoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B7417D770E1001F0FD5 /* NovoViewController.m */; };
 		AFCD4B9C17D770E1001F0FD5 /* RealizadosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B7617D770E1001F0FD5 /* RealizadosViewController.m */; };
 		AFCD4B9D17D770E1001F0FD5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B7917D770E1001F0FD5 /* LoginViewController.m */; };
-		AFCD4B9E17D770E1001F0FD5 /* mt-clock.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCD4B7B17D770E1001F0FD5 /* mt-clock.png */; };
-		AFCD4B9F17D770E1001F0FD5 /* mt-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCD4B7C17D770E1001F0FD5 /* mt-logo.png */; };
 		AFCD4BA417D77116001F0FD5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCD4BA217D77116001F0FD5 /* Icon.png */; };
 		AFCD4BA517D77116001F0FD5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCD4BA317D77116001F0FD5 /* Icon@2x.png */; };
 		AFCD4BA717D771C0001F0FD5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4BA617D771C0001F0FD5 /* CFNetwork.framework */; };
@@ -49,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF35E82C17EA018D0042F702 /* mytimer-fundopreto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mytimer-fundopreto.png"; sourceTree = "<group>"; };
+		AF35E82D17EA018D0042F702 /* mytimer-fundobranco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mytimer-fundobranco.png"; sourceTree = "<group>"; };
 		AFCD4B0B17D77050001F0FD5 /* MyTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCD4B0E17D77050001F0FD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AFCD4B1017D77050001F0FD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,8 +105,6 @@
 		AFCD4B7617D770E1001F0FD5 /* RealizadosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RealizadosViewController.m; sourceTree = "<group>"; };
 		AFCD4B7817D770E1001F0FD5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		AFCD4B7917D770E1001F0FD5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		AFCD4B7B17D770E1001F0FD5 /* mt-clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mt-clock.png"; sourceTree = "<group>"; };
-		AFCD4B7C17D770E1001F0FD5 /* mt-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mt-logo.png"; sourceTree = "<group>"; };
 		AFCD4BA217D77116001F0FD5 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		AFCD4BA317D77116001F0FD5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		AFCD4BA617D771C0001F0FD5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -297,8 +297,8 @@
 		AFCD4B7A17D770E1001F0FD5 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
-				AFCD4B7B17D770E1001F0FD5 /* mt-clock.png */,
-				AFCD4B7C17D770E1001F0FD5 /* mt-logo.png */,
+				AF35E82C17EA018D0042F702 /* mytimer-fundopreto.png */,
+				AF35E82D17EA018D0042F702 /* mytimer-fundobranco.png */,
 			);
 			path = Imagens;
 			sourceTree = "<group>";
@@ -369,11 +369,11 @@
 				AFCD4B2317D77050001F0FD5 /* Default.png in Resources */,
 				AFCD4B2517D77050001F0FD5 /* Default@2x.png in Resources */,
 				AFCD4B2717D77050001F0FD5 /* Default-568h@2x.png in Resources */,
-				AFCD4B9E17D770E1001F0FD5 /* mt-clock.png in Resources */,
-				AFCD4B9F17D770E1001F0FD5 /* mt-logo.png in Resources */,
 				AFCD4BA417D77116001F0FD5 /* Icon.png in Resources */,
 				AFCD4BA517D77116001F0FD5 /* Icon@2x.png in Resources */,
 				AFCD4BC517D7739B001F0FD5 /* MainStoryboard.storyboard in Resources */,
+				AF35E82E17EA018D0042F702 /* mytimer-fundopreto.png in Resources */,
+				AF35E82F17EA018D0042F702 /* mytimer-fundobranco.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
