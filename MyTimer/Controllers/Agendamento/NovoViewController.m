@@ -55,7 +55,7 @@
         NSURL *url = [NSURL URLWithString:SERVICO_AGENDAR];
         ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
         [request setRequestMethod:@"POST"];
-        [request addPostValue:self.txtServico.accessibilityValue forKey:@"idServico"];
+        [request addPostValue:[NSString stringWithFormat:@"%@", self.txtServico.accessibilityValue] forKey:@"idServico"];
         [request addPostValue:cpf forKey:@"cpfCliente"];
         [request addPostValue:self.txtData.text forKey:@"data"];
         [request addPostValue:self.txtHorario.text forKey:@"horario"];
@@ -69,6 +69,7 @@
         [request setShowAccurateProgress:YES];
         [request setUploadProgressDelegate:self];
         [request setDelegate:self];
+        [request setTimeOutSeconds:120];
         [request startAsynchronous];
     }
 }
@@ -245,6 +246,7 @@
     
     if (vcMensagemRetorno.length > 0) {
         [self.view endEditing:YES];
+        self.view.userInteractionEnabled = YES;
         [UIView animateWithDuration:0.5
                          animations:^{carregandoTela.alpha = 0.0;}
                          completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
