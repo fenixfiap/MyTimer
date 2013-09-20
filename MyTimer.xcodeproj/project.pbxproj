@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AF35E82E17EA018D0042F702 /* mytimer-fundopreto.png in Resources */ = {isa = PBXBuildFile; fileRef = AF35E82C17EA018D0042F702 /* mytimer-fundopreto.png */; };
 		AF35E82F17EA018D0042F702 /* mytimer-fundobranco.png in Resources */ = {isa = PBXBuildFile; fileRef = AF35E82D17EA018D0042F702 /* mytimer-fundobranco.png */; };
+		AF7AC69A17ECEF1E00586AAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF7AC69917ECEF1E00586AAA /* Images.xcassets */; };
+		AF7AC69C17ECF1BF00586AAA /* Icon-7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7AC69B17ECF1BF00586AAA /* Icon-7@2x.png */; };
 		AFCD4B0F17D77050001F0FD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4B0E17D77050001F0FD5 /* UIKit.framework */; };
 		AFCD4B1117D77050001F0FD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4B1017D77050001F0FD5 /* Foundation.framework */; };
 		AFCD4B1317D77050001F0FD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4B1217D77050001F0FD5 /* CoreGraphics.framework */; };
@@ -51,6 +53,8 @@
 /* Begin PBXFileReference section */
 		AF35E82C17EA018D0042F702 /* mytimer-fundopreto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mytimer-fundopreto.png"; sourceTree = "<group>"; };
 		AF35E82D17EA018D0042F702 /* mytimer-fundobranco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mytimer-fundobranco.png"; sourceTree = "<group>"; };
+		AF7AC69917ECEF1E00586AAA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AF7AC69B17ECF1BF00586AAA /* Icon-7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-7@2x.png"; sourceTree = "<group>"; };
 		AFCD4B0B17D77050001F0FD5 /* MyTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCD4B0E17D77050001F0FD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AFCD4B1017D77050001F0FD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -142,6 +146,7 @@
 			children = (
 				AFCD4BA217D77116001F0FD5 /* Icon.png */,
 				AFCD4BA317D77116001F0FD5 /* Icon@2x.png */,
+				AF7AC69B17ECF1BF00586AAA /* Icon-7@2x.png */,
 				AFCD4B1617D77050001F0FD5 /* MyTimer */,
 				AFCD4B0D17D77050001F0FD5 /* Frameworks */,
 				AFCD4B0C17D77050001F0FD5 /* Products */,
@@ -181,6 +186,7 @@
 				AFCD4B3017D770E1001F0FD5 /* Componentes */,
 				AFCD4B7117D770E1001F0FD5 /* Controllers */,
 				AFCD4B7A17D770E1001F0FD5 /* Imagens */,
+				AF7AC69917ECEF1E00586AAA /* Images.xcassets */,
 				AFCD4B1717D77050001F0FD5 /* Supporting Files */,
 			);
 			path = MyTimer;
@@ -366,10 +372,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFCD4B1B17D77050001F0FD5 /* InfoPlist.strings in Resources */,
+				AF7AC69A17ECEF1E00586AAA /* Images.xcassets in Resources */,
 				AFCD4B2317D77050001F0FD5 /* Default.png in Resources */,
 				AFCD4B2517D77050001F0FD5 /* Default@2x.png in Resources */,
 				AFCD4B2717D77050001F0FD5 /* Default-568h@2x.png in Resources */,
 				AFCD4BA417D77116001F0FD5 /* Icon.png in Resources */,
+				AF7AC69C17ECF1BF00586AAA /* Icon-7@2x.png in Resources */,
 				AFCD4BA517D77116001F0FD5 /* Icon@2x.png in Resources */,
 				AFCD4BC517D7739B001F0FD5 /* MainStoryboard.storyboard in Resources */,
 				AF35E82E17EA018D0042F702 /* mytimer-fundopreto.png in Resources */,
@@ -490,6 +498,8 @@
 		AFCD4B2E17D77050001F0FD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyTimer/MyTimer-Prefix.pch";
 				INFOPLIST_FILE = "MyTimer/MyTimer-Info.plist";
@@ -501,6 +511,8 @@
 		AFCD4B2F17D77050001F0FD5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyTimer/MyTimer-Prefix.pch";
 				INFOPLIST_FILE = "MyTimer/MyTimer-Info.plist";
