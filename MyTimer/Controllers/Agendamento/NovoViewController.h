@@ -24,6 +24,7 @@
     @private NSMutableDictionary* dictConteudoDentistas;
     @private NSMutableDictionary* dictConteudoHorarios;
     @private NSMutableDictionary* dictMapHorariosFuncionarios;
+    @private float initialY;
 }
 
 @property (strong, nonatomic) IBOutlet UIScrollView *svTela;

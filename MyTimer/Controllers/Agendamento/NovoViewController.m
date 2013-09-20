@@ -29,6 +29,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alteraData) name:UITextFieldTextDidEndEditingNotification object:self.txtData];
     [self.scPreferencia addTarget:self action:@selector(alteraPreferencia) forControlEvents:UIControlEventValueChanged];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alteraDentista) name:UITextFieldTextDidEndEditingNotification object:self.txtDentista];
+    
+    initialY = self.txtHorario.frame.origin.y;
 }
 
 - (void)didReceiveMemoryWarning
@@ -147,6 +149,8 @@
     [dictConteudoDentistas removeAllObjects];
     [dictConteudoHorarios removeAllObjects];
     [dictMapHorariosFuncionarios removeAllObjects];
+    self.txtDentista.hidden = NO;
+    self.txtHorario.frame = CGRectMake(self.txtHorario.frame.origin.x, initialY, self.txtHorario.frame.size.width, self.txtHorario.frame.size.height);
     self.txtData.enabled = YES;
     self.scPreferencia.enabled = NO;
     self.txtDentista.enabled = NO;
@@ -160,6 +164,9 @@
 -(void) alteraData
 {
     if (![self.txtData.text isEqualToString:@""]) {
+        
+        self.txtDentista.hidden = NO;
+        self.txtHorario.frame = CGRectMake(self.txtHorario.frame.origin.x, initialY, self.txtHorario.frame.size.width, self.txtHorario.frame.size.height);
         NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"dd/MM/yyyy";
         NSDate* dataSel = [formatter dateFromString:self.txtData.text];
@@ -195,12 +202,17 @@
     [dictConteudoDentistas removeAllObjects];
     [dictConteudoHorarios removeAllObjects];
     [dictMapHorariosFuncionarios removeAllObjects];
+    
+    self.txtDentista.hidden = NO;
+    self.txtHorario.frame = CGRectMake(self.txtHorario.frame.origin.x, initialY, self.txtHorario.frame.size.width, self.txtHorario.frame.size.height);
     if (self.scPreferencia.selectedSegmentIndex == 0)
     {
         [self listarDentistas];
     }
     else if (self.scPreferencia.selectedSegmentIndex == 1)
     {
+        self.txtHorario.frame = CGRectMake(self.txtHorario.frame.origin.x, self.txtDentista.frame.origin.y, self.txtHorario.frame.size.width, self.txtHorario.frame.size.height);
+        self.txtDentista.hidden = YES;
         self.txtDentista.enabled = NO;
         [self listarHorarios];
     } else {
