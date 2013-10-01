@@ -71,6 +71,7 @@
         ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
         request.shouldPresentCredentialsBeforeChallenge = YES;
         [request addBasicAuthenticationHeaderWithUsername:self.txtLogin.text andPassword:self.txtSenha.text];
+        request.defaultResponseEncoding = NSUTF8StringEncoding;
         [request setRequestMethod:@"POST"];
         [request setShowAccurateProgress:YES];
         [request setUploadProgressDelegate:self];

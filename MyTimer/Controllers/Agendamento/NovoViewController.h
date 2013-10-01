@@ -17,7 +17,7 @@
 #import "JSONKit.h"
 #import "Constantes.h"
 
-@interface NovoViewController : UIViewController <UIActionSheetDelegate>
+@interface NovoViewController : UIViewController <UIActionSheetDelegate, UIAlertViewDelegate>
 {
     @private CustomActivityIndicatorView* carregandoTela;
     @private NSMutableDictionary* dictConteudoServicos;

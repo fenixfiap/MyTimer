@@ -271,6 +271,15 @@
     }
 }
 
+#pragma mark - Métodos AlertView Delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ([alertView.title isEqualToString:@"Sucesso:"] || [alertView.title isEqualToString:@"Erro de conexão:"]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
 #pragma mark - Métodos ActionSheet Delegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -289,8 +298,8 @@
                      animations:^{carregandoTela.alpha = 0.0;}
                      completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de conexão:" message:@"Não foi possível se conectar com o serviço. Verique sua conexão e tente novamente." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    alert.delegate = self;
     [alert show];
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)requestFinished:(ASIFormDataRequest *)request {
@@ -373,8 +382,8 @@
     else if ([servicoAtual isEqualToString:SERVICO_AGENDAR]) {
         if (request.responseStatusCode == 200) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sucesso:" message:@"Agendamento realizado!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            alert.delegate = self;
             [alert show];
-            [self dismissViewControllerAnimated:YES completion:nil];
         }
         else {
             self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
