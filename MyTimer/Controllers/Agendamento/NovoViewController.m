@@ -2,7 +2,7 @@
 //  NovoViewController.m
 //  MyTimer
 //
-//  Created by Gabriel Moraes on 12/08/13.
+//  Created by Fenix on 12/08/13.
 //  Copyright (c) 2013 Fenix. All rights reserved.
 //
 

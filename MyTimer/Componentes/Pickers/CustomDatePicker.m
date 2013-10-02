@@ -2,7 +2,7 @@
 //  CustomDatePicker.m
 //  MyTimer
 //
-//  Created by Gabriel Moraes on 02/08/13.
+//  Created by Fenix on 02/08/13.
 //  Copyright (c) 2013 Fenix. All rights reserved.
 //
 
