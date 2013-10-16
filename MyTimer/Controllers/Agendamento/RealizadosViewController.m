@@ -49,14 +49,9 @@
 
 -(void)listaAgendamentos
 {
-    NSManagedObjectContext *context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"Usuario" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    NSError *error;
-    NSArray* fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    NSString* cpf = [((NSManagedObject*)fetchedObjects[0]) valueForKey:@"cpf"];
+    CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
+    NSArray* fetchedObjects = [crud listAll];
+    NSString* cpf = [fetchedObjects[0] valueForKey:@"cpf"];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:SERVICO_LISTAR_AGENDAMENTOS, cpf]];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setRequestMethod:@"GET"];
@@ -71,17 +66,8 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 0) {
-        NSManagedObjectContext *context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription
-                                       entityForName:@"Usuario" inManagedObjectContext:context];
-        [fetchRequest setEntity:entity];
-        NSError *error;
-        NSArray* fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-        for (NSManagedObject* object in fetchedObjects) {
-            [context deleteObject:object];
-        }
-        [context save:&error];
+        CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
+        [crud removeAll];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }

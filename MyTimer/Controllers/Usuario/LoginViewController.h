@@ -14,6 +14,7 @@
 #import "CustomActivityIndicatorView.h"
 #import "Constantes.h"
 #import "AppDelegate.h"
+#import "CRUD.h"
 
 @interface LoginViewController : UIViewController
 {

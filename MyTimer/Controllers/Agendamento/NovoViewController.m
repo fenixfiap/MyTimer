@@ -45,15 +45,9 @@
     [self.view addSubview:carregandoTela];
     self.view.userInteractionEnabled = NO;
     if ([self validaCampos]) {
-        NSManagedObjectContext *context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription
-                                       entityForName:@"Usuario" inManagedObjectContext:context];
-        [fetchRequest setEntity:entity];
-        NSError *error;
-        NSArray* fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-        NSString* cpf = [((NSManagedObject*)fetchedObjects[0]) valueForKey:@"cpf"];
-        
+        CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
+        NSArray* fetchedObjects = [crud listAll];
+        NSString* cpf = [fetchedObjects[0] valueForKey:@"cpf"];
         NSURL *url = [NSURL URLWithString:SERVICO_AGENDAR];
         ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
         [request setRequestMethod:@"POST"];
@@ -314,7 +308,7 @@
             NSArray *arrRetorno = (NSArray*)[request.responseData objectFromJSONData];
             dictConteudoServicos = [[NSMutableDictionary alloc] init];
             for (NSDictionary* dictServico in arrRetorno) {
-                [dictConteudoServicos setValue:[dictServico valueForKey:@"nome"] forKey:[dictServico valueForKey:@"id"]];
+                [dictConteudoServicos setValue:[[dictServico valueForKey:@"nome"] capitalizedString] forKey:[dictServico valueForKey:@"id"]];
             }
             self.txtServico.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtServico andContent:dictConteudoServicos];
             self.txtServico.enabled = YES;
@@ -353,7 +347,7 @@
             NSArray *arrRetorno = (NSArray*)[request.responseData objectFromJSONData];
             dictConteudoDentistas = [[NSMutableDictionary alloc] init];
             for (NSDictionary* dictDentista in arrRetorno) {
-                [dictConteudoDentistas setValue:[dictDentista valueForKeyPath:@"pessoa.nome"] forKey:[dictDentista valueForKeyPath:@"id"]];
+                [dictConteudoDentistas setValue:[[dictDentista valueForKeyPath:@"pessoa.nome"]  capitalizedString] forKey:[dictDentista valueForKeyPath:@"id"]];
             }
             self.txtDentista.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtDentista andContent:dictConteudoDentistas];
             self.txtDentista.enabled = YES;

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF35E82E17EA018D0042F702 /* mytimer-fundopreto.png in Resources */ = {isa = PBXBuildFile; fileRef = AF35E82C17EA018D0042F702 /* mytimer-fundopreto.png */; };
 		AF35E82F17EA018D0042F702 /* mytimer-fundobranco.png in Resources */ = {isa = PBXBuildFile; fileRef = AF35E82D17EA018D0042F702 /* mytimer-fundobranco.png */; };
+		AF73D7B21806E153008EFCBE /* CRUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AF73D7B11806E153008EFCBE /* CRUD.m */; };
 		AF7AC69A17ECEF1E00586AAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF7AC69917ECEF1E00586AAA /* Images.xcassets */; };
 		AF7AC69C17ECF1BF00586AAA /* Icon-7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7AC69B17ECF1BF00586AAA /* Icon-7@2x.png */; };
 		AFCD4B0F17D77050001F0FD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4B0E17D77050001F0FD5 /* UIKit.framework */; };
@@ -53,6 +54,8 @@
 /* Begin PBXFileReference section */
 		AF35E82C17EA018D0042F702 /* mytimer-fundopreto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mytimer-fundopreto.png"; sourceTree = "<group>"; };
 		AF35E82D17EA018D0042F702 /* mytimer-fundobranco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mytimer-fundobranco.png"; sourceTree = "<group>"; };
+		AF73D7B01806E153008EFCBE /* CRUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRUD.h; path = DAO/CRUD.h; sourceTree = "<group>"; };
+		AF73D7B11806E153008EFCBE /* CRUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRUD.m; path = DAO/CRUD.m; sourceTree = "<group>"; };
 		AF7AC69917ECEF1E00586AAA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AF7AC69B17ECF1BF00586AAA /* Icon-7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-7@2x.png"; sourceTree = "<group>"; };
 		AFCD4B0B17D77050001F0FD5 /* MyTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +144,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF73D7AF1806E101008EFCBE /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				AF73D7B01806E153008EFCBE /* CRUD.h */,
+				AF73D7B11806E153008EFCBE /* CRUD.m */,
+			);
+			name = DAO;
+			sourceTree = "<group>";
+		};
 		AFCD4B0217D77050001F0FD5 = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +226,7 @@
 				AFCD4B3417D770E1001F0FD5 /* ISO8601DateFormatter.m */,
 				AFCD4B3F17D770E1001F0FD5 /* JSONKit.h */,
 				AFCD4B4017D770E1001F0FD5 /* JSONKit.m */,
+				AF73D7AF1806E101008EFCBE /* DAO */,
 				AFCD4BCD17D8D8EE001F0FD5 /* Pickers */,
 				AFCD4B4117D770E1001F0FD5 /* KeyboardToolbar */,
 				AFCD4B4417D770E1001F0FD5 /* Loading */,
@@ -401,6 +414,7 @@
 				AFCD4B8917D770E1001F0FD5 /* CustomActivityIndicatorView.m in Sources */,
 				AFCD4B8A17D770E1001F0FD5 /* HZActivityIndicatorView.m in Sources */,
 				AFCD4B8F17D770E1001F0FD5 /* ASIAuthenticationDialog.m in Sources */,
+				AF73D7B21806E153008EFCBE /* CRUD.m in Sources */,
 				AFCD4B9017D770E1001F0FD5 /* ASIDataCompressor.m in Sources */,
 				AFCD4B9117D770E1001F0FD5 /* ASIDataDecompressor.m in Sources */,
 				AFCD4B9217D770E1001F0FD5 /* ASIDownloadCache.m in Sources */,

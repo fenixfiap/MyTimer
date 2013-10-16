@@ -16,6 +16,7 @@
 #import "ASIFormDataRequest.h"
 #import "JSONKit.h"
 #import "Constantes.h"
+#import "CRUD.h"
 
 @interface NovoViewController : UIViewController <UIActionSheetDelegate, UIAlertViewDelegate>
 {

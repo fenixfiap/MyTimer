@@ -24,13 +24,8 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSManagedObjectContext *context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"Usuario" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    NSError *error;
-    NSArray* fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
+    CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
+    NSArray* fetchedObjects = [crud listAll];
     if (fetchedObjects.count > 0)
     {
         self.btnEntrar.hidden = YES;
@@ -38,7 +33,7 @@
         self.txtSenha.hidden = YES;
         self.lblUsuario.hidden = NO;
         self.btnContinuar.hidden = NO;
-        self.lblUsuario.text = [NSString stringWithFormat:@"Bem vindo, %@", [((NSManagedObject*)fetchedObjects[0]) valueForKey:@"nome"]];
+        self.lblUsuario.text = [NSString stringWithFormat:@"Bem vindo, %@", [fetchedObjects[0] valueForKey:@"nome"]];
     }
     else
     {
@@ -130,19 +125,8 @@
     {
         NSDictionary *dicRetorno = [[NSDictionary alloc] initWithDictionary:((NSDictionary*)[request.responseData objectFromJSONData])];
         
-        NSManagedObjectContext *context = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).managedObjectContext;
-        NSManagedObject *usuario = [NSEntityDescription
-                                           insertNewObjectForEntityForName:@"Usuario"
-                                    inManagedObjectContext:context];
-        [usuario setValue:[dicRetorno valueForKey:@"id"] forKey:@"idCliente"];
-        [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.id"] forKey:@"idPessoa"];
-        [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.nome"] forKey:@"nome"];
-        [usuario setValue:[dicRetorno valueForKeyPath:@"pessoa.cpf"] forKey:@"cpf"];
-        NSError *error;
-        if (![context save:&error])
-        {
-            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-        }
+        CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
+        [crud saveUser:dicRetorno];
         
         [[NSUserDefaults standardUserDefaults] setValue:self.txtLogin.text forKey:USER_INFO_ULTIMO_LOGADO];
         [self performSegueWithIdentifier:@"sgLoga" sender:self];
