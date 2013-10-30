@@ -18,6 +18,7 @@
 		AF73D7B21806E153008EFCBE /* CRUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AF73D7B11806E153008EFCBE /* CRUD.m */; };
 		AF7AC69A17ECEF1E00586AAA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF7AC69917ECEF1E00586AAA /* Images.xcassets */; };
 		AF7AC69C17ECF1BF00586AAA /* Icon-7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7AC69B17ECF1BF00586AAA /* Icon-7@2x.png */; };
+		AFB2EC8518217B42004DDD56 /* MyTimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFB2EC8318217B42004DDD56 /* MyTimer.xcdatamodeld */; };
 		AFCD4B0F17D77050001F0FD5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4B0E17D77050001F0FD5 /* UIKit.framework */; };
 		AFCD4B1117D77050001F0FD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4B1017D77050001F0FD5 /* Foundation.framework */; };
 		AFCD4B1317D77050001F0FD5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFCD4B1217D77050001F0FD5 /* CoreGraphics.framework */; };
@@ -28,7 +29,6 @@
 		AFCD4B2317D77050001F0FD5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCD4B2217D77050001F0FD5 /* Default.png */; };
 		AFCD4B2517D77050001F0FD5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCD4B2417D77050001F0FD5 /* Default@2x.png */; };
 		AFCD4B2717D77050001F0FD5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFCD4B2617D77050001F0FD5 /* Default-568h@2x.png */; };
-		AFCD4B2A17D77050001F0FD5 /* MyTimer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B2817D77050001F0FD5 /* MyTimer.xcdatamodeld */; };
 		AFCD4B8817D770E1001F0FD5 /* KeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B4317D770E1001F0FD5 /* KeyboardToolbar.m */; };
 		AFCD4B8917D770E1001F0FD5 /* CustomActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B4617D770E1001F0FD5 /* CustomActivityIndicatorView.m */; };
 		AFCD4B8A17D770E1001F0FD5 /* HZActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCD4B4817D770E1001F0FD5 /* HZActivityIndicatorView.m */; };
@@ -66,6 +66,7 @@
 		AF73D7B11806E153008EFCBE /* CRUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRUD.m; path = DAO/CRUD.m; sourceTree = "<group>"; };
 		AF7AC69917ECEF1E00586AAA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AF7AC69B17ECF1BF00586AAA /* Icon-7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-7@2x.png"; sourceTree = "<group>"; };
+		AFB2EC8418217B42004DDD56 /* MyTimer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyTimer.xcdatamodel; sourceTree = "<group>"; };
 		AFCD4B0B17D77050001F0FD5 /* MyTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCD4B0E17D77050001F0FD5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AFCD4B1017D77050001F0FD5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -80,7 +81,6 @@
 		AFCD4B2217D77050001F0FD5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AFCD4B2417D77050001F0FD5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AFCD4B2617D77050001F0FD5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		AFCD4B2917D77050001F0FD5 /* MyTimer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyTimer.xcdatamodel; sourceTree = "<group>"; };
 		AFCD4B3117D770E1001F0FD5 /* Constantes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Constantes.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		AFCD4B4217D770E1001F0FD5 /* KeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = KeyboardToolbar.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		AFCD4B4317D770E1001F0FD5 /* KeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = KeyboardToolbar.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -109,7 +109,6 @@
 		AFFA709E18215BF10036DAD2 /* NSData+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+JSON.m"; path = "MyTimer/Componentes/DataJSON/NSData+JSON.m"; sourceTree = SOURCE_ROOT; };
 		AFFA70A0182175910036DAD2 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
 		AFFA70A1182175910036DAD2 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
-		AFFA70A3182176340036DAD2 /* UsuarioModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = UsuarioModel.xcdatamodel; sourceTree = "<group>"; };
 		B2F6C369BACD42AD868F63F7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,7 +201,7 @@
 				AFCD4BC317D7739B001F0FD5 /* MainStoryboard.storyboard */,
 				AFCD4B1F17D77050001F0FD5 /* AppDelegate.h */,
 				AFCD4B2017D77050001F0FD5 /* AppDelegate.m */,
-				AFCD4B2817D77050001F0FD5 /* MyTimer.xcdatamodeld */,
+				AFB2EC8318217B42004DDD56 /* MyTimer.xcdatamodeld */,
 				AFFA70A0182175910036DAD2 /* Usuario.h */,
 				AFFA70A1182175910036DAD2 /* Usuario.m */,
 				AF1540EB1811812D007409A1 /* Models */,
@@ -431,7 +430,7 @@
 				AFCD4B1D17D77050001F0FD5 /* main.m in Sources */,
 				AFCD4B2117D77050001F0FD5 /* AppDelegate.m in Sources */,
 				AF1540FE1811A19D007409A1 /* FuncionarioModel.m in Sources */,
-				AFCD4B2A17D77050001F0FD5 /* MyTimer.xcdatamodeld in Sources */,
+				AFB2EC8518217B42004DDD56 /* MyTimer.xcdatamodeld in Sources */,
 				AF1541011811A1AF007409A1 /* ServicoModel.m in Sources */,
 				AFCD4B8817D770E1001F0FD5 /* KeyboardToolbar.m in Sources */,
 				AFCD4B8917D770E1001F0FD5 /* CustomActivityIndicatorView.m in Sources */,
@@ -580,13 +579,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AFCD4B2817D77050001F0FD5 /* MyTimer.xcdatamodeld */ = {
+		AFB2EC8318217B42004DDD56 /* MyTimer.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AFFA70A3182176340036DAD2 /* UsuarioModel.xcdatamodel */,
-				AFCD4B2917D77050001F0FD5 /* MyTimer.xcdatamodel */,
+				AFB2EC8418217B42004DDD56 /* MyTimer.xcdatamodel */,
 			);
-			currentVersion = AFCD4B2917D77050001F0FD5 /* MyTimer.xcdatamodel */;
+			currentVersion = AFB2EC8418217B42004DDD56 /* MyTimer.xcdatamodel */;
 			path = MyTimer.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
