@@ -17,14 +17,14 @@
     
     
     self.alpha = 0;
-    UIView* vwContainerLoading = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    UIView *vwContainerLoading = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     vwContainerLoading.center = view.center;
     vwContainerLoading.backgroundColor = [UIColor grayColor];
     vwContainerLoading.alpha = 0.6;
     vwContainerLoading.layer.cornerRadius = 10;
     vwContainerLoading.layer.masksToBounds = YES;
     
-    HZActivityIndicatorView* activityIndicator = [[HZActivityIndicatorView alloc] init];
+    HZActivityIndicatorView *activityIndicator = [[HZActivityIndicatorView alloc] init];
     activityIndicator.backgroundColor = [UIColor clearColor];
     activityIndicator.opaque = YES;
     activityIndicator.steps = 10;

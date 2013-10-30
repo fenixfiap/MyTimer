@@ -25,15 +25,15 @@
 {
     [super viewWillAppear:animated];
     CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
-    ClienteModel* usuarioLogado = [crud getLogado];
-    if (usuarioLogado)
+    NSArray* fetchedObjects = [crud listAll];
+    if (fetchedObjects.count > 0)
     {
         self.btnEntrar.hidden = YES;
         self.txtLogin.hidden = YES;
         self.txtSenha.hidden = YES;
         self.lblUsuario.hidden = NO;
         self.btnContinuar.hidden = NO;
-        self.lblUsuario.text = [NSString stringWithFormat:@"Bem vindo, %@", usuarioLogado.pessoa.nome];
+        self.lblUsuario.text = [NSString stringWithFormat:@"Bem vindo, %@", [fetchedObjects[0] valueForKey:@"nome"]];
     }
     else
     {
@@ -62,7 +62,7 @@
     carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
     [self.view addSubview:carregandoTela];
     if ([self validaCampos]) {
-        NSURL* url = [NSURL URLWithString:SERVICO_LOGAR];
+        NSURL *url = [NSURL URLWithString:SERVICO_LOGAR];
         ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
         request.shouldPresentCredentialsBeforeChallenge = YES;
         [request addBasicAuthenticationHeaderWithUsername:self.txtLogin.text andPassword:self.txtSenha.text];
@@ -109,7 +109,7 @@
 
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
-    NSLog(@"Response %d ==> %@", request.responseStatusCode, request.responseString);
+    NSLog(@"Response %d ==> %@", request.responseStatusCode, [request responseString]);
     [carregandoTela removeFromSuperview];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de conexão:" message:@"Não foi possível se conectar com o serviço. Verique sua conexão e tente novamente." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -118,16 +118,15 @@
 
 - (void)requestFinished:(ASIFormDataRequest *)request
 {
-    NSLog(@"Response %d ==> %@", request.responseStatusCode, request.responseString);
+    NSLog(@"Response %d ==> %@", request.responseStatusCode, [request responseString]);
     [carregandoTela removeFromSuperview];
     
     if (request.responseStatusCode == 200)
     {
+        NSDictionary *dicRetorno = [[NSDictionary alloc] initWithDictionary:((NSDictionary*)[request.responseData objectFromJSONData])];
         
-        NSError* err = nil;
-        ClienteModel* cliente = [[ClienteModel alloc] initWithDictionary:request.responseData.toJSON error:&err];
         CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
-        [crud saveUser:cliente];
+        [crud saveUser:dicRetorno];
         
         [[NSUserDefaults standardUserDefaults] setValue:self.txtLogin.text forKey:USER_INFO_ULTIMO_LOGADO];
         [self performSegueWithIdentifier:@"sgLoga" sender:self];

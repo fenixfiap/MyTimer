@@ -10,53 +10,36 @@
 
 @implementation CustomPicker
 
-- (id)initWithFrame:(CGRect)frame andTextField:(UITextField *)txt andContent:(NSArray *)content{
+- (id)initWithFrame:(CGRect)frame andTextField:(UITextField *)txt andContent:(NSDictionary *)content{
 	self = [super initWithFrame:frame];
     self.delegate = self;
     self.showsSelectionIndicator = YES;
     
     txtAssociado = txt;
-    arrConteudo = content;
+    dictConteudo = content;
     return self;
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
-    [self verificaObjeto:[arrConteudo objectAtIndex:0]];
+    arrOrdenado = [[dictConteudo allValues] sortedArrayUsingSelector: @selector(caseInsensitiveCompare:)];
+    NSString* selecionado = [arrOrdenado objectAtIndex:0];
+    txtAssociado.text = selecionado;
+    txtAssociado.accessibilityValue = [NSString stringWithFormat:@"%@", [dictConteudo allKeysForObject:selecionado][0]];
 	return 1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
-	return [arrConteudo count];
+	return [dictConteudo count];
 }
 
 - (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    [self verificaObjeto:[arrConteudo objectAtIndex:row]];
-	return txtAssociado.text;
+	return [arrOrdenado objectAtIndex:row];
 
 }
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    [self verificaObjeto:[arrConteudo objectAtIndex:row]];
-}
-
--(void) verificaObjeto:(id)objeto
-{
-    NSString* tituloSelecionado;
-    NSString* idSelecionado;
-    if ([objeto isKindOfClass:[ServicoModel class]]) {
-        idSelecionado = [NSString stringWithFormat:@"%d",((ServicoModel*)objeto).idServico];
-        tituloSelecionado = ((ServicoModel*)objeto).nome;
-    }
-    else if([objeto isKindOfClass:[FuncionarioModel class]])
-    {
-        idSelecionado = [NSString stringWithFormat:@"%d",((FuncionarioModel*)objeto).idFuncionario];
-        tituloSelecionado = ((FuncionarioModel*)objeto).pessoa.nome;
-    }
-    else {
-        idSelecionado = objeto;
-        tituloSelecionado = objeto;
-    }
-    txtAssociado.text = tituloSelecionado;
-    txtAssociado.accessibilityValue = idSelecionado;
+    NSString* selecionado = [arrOrdenado objectAtIndex:row];
+    txtAssociado.text = selecionado;
+    txtAssociado.accessibilityValue = [NSString stringWithFormat:@"%@", [dictConteudo allKeysForObject:selecionado][0]];
 }
 
 @end
