@@ -18,7 +18,7 @@
     keyboard.svTela = self.svTela;
     self.txtServico.inputAccessoryView = keyboard;
     self.txtData.inputAccessoryView = keyboard;
-    self.txtDentista.inputAccessoryView = keyboard;
+    self.txtFuncionario.inputAccessoryView = keyboard;
     self.txtHorario.inputAccessoryView = keyboard;
     
     [self listarServicos];
@@ -28,7 +28,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alteraServico) name:UITextFieldTextDidEndEditingNotification object:self.txtServico];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alteraData) name:UITextFieldTextDidEndEditingNotification object:self.txtData];
     [self.scPreferencia addTarget:self action:@selector(alteraPreferencia) forControlEvents:UIControlEventValueChanged];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alteraDentista) name:UITextFieldTextDidEndEditingNotification object:self.txtDentista];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(alteraFuncionario) name:UITextFieldTextDidEndEditingNotification object:self.txtFuncionario];
     
     initialY = self.txtHorario.frame.origin.y;
 }
@@ -46,17 +46,16 @@
     self.view.userInteractionEnabled = NO;
     if ([self validaCampos]) {
         CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
-        NSArray* fetchedObjects = [crud listAll];
-        NSString* cpf = [fetchedObjects[0] valueForKey:@"cpf"];
+        ClienteModel* usuarioLogado = [crud getLogado];
         NSURL *url = [NSURL URLWithString:SERVICO_AGENDAR];
         ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
         [request setRequestMethod:@"POST"];
         [request addPostValue:[NSString stringWithFormat:@"%@", self.txtServico.accessibilityValue] forKey:@"idServico"];
-        [request addPostValue:cpf forKey:@"cpfCliente"];
+        [request addPostValue:usuarioLogado.pessoa.cpf forKey:@"cpfCliente"];
         [request addPostValue:self.txtData.text forKey:@"data"];
         [request addPostValue:self.txtHorario.text forKey:@"horario"];
         if (self.scPreferencia.selectedSegmentIndex == 0) {
-            [request addPostValue:[NSString stringWithFormat:@"%@", self.txtDentista.accessibilityValue] forKey:@"idFuncionario"];
+            [request addPostValue:[NSString stringWithFormat:@"%@", self.txtFuncionario.accessibilityValue] forKey:@"idFuncionario"];
         }
         else {
             [request addPostValue:[[dictMapHorariosFuncionarios objectForKey:self.txtHorario.text][0] valueForKey:@"id"] forKey:@"idFuncionario"];
@@ -95,11 +94,11 @@
 }
 
 
--(void) listarDentistas
+-(void) listarFuncionarios
 {
     carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
     [self.view addSubview:carregandoTela];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:SERVICO_LISTAR_DENTISTAS, self.txtServico.accessibilityValue]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:SERVICO_LISTAR_FUNCIONARIOS, self.txtServico.accessibilityValue]];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setRequestMethod:@"GET"];
     [request setShowAccurateProgress:YES];
@@ -122,16 +121,16 @@
     [request setDelegate:self];
     [request startAsynchronous];
 }
--(void) listarHorariosDentista
+-(void) listarHorariosFuncionario
 {
     carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
     [self.view addSubview:carregandoTela];
-    NSURL *url = [NSURL URLWithString:SERVICO_LISTAR_HORARIOS_DENTISTA];
+    NSURL *url = [NSURL URLWithString:SERVICO_LISTAR_HORARIOS_FUNCIONARIO];
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setRequestMethod:@"POST"];
     [request addPostValue:self.txtData.text forKey:@"data"];
     [request addPostValue:self.txtServico.accessibilityValue forKey:@"idServico"];
-    [request addPostValue:self.txtDentista.accessibilityValue forKey:@"idFuncionario"];
+    [request addPostValue:self.txtFuncionario.accessibilityValue forKey:@"idFuncionario"];
     [request setShowAccurateProgress:YES];
     [request setUploadProgressDelegate:self];
     [request setDelegate:self];
@@ -140,18 +139,16 @@
 
 -(void) alteraServico
 {
-    [dictConteudoDentistas removeAllObjects];
-    [dictConteudoHorarios removeAllObjects];
     [dictMapHorariosFuncionarios removeAllObjects];
-    self.txtDentista.hidden = NO;
+    self.txtFuncionario.hidden = NO;
     self.txtHorario.frame = CGRectMake(self.txtHorario.frame.origin.x, initialY, self.txtHorario.frame.size.width, self.txtHorario.frame.size.height);
     self.txtData.enabled = YES;
     self.scPreferencia.enabled = NO;
-    self.txtDentista.enabled = NO;
+    self.txtFuncionario.enabled = NO;
     self.txtHorario.enabled = NO;
     self.txtData.text = @"";
     self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
-    self.txtDentista.text = @"";
+    self.txtFuncionario.text = @"";
     self.txtHorario.text = @"";
 }
 
@@ -159,7 +156,7 @@
 {
     if (![self.txtData.text isEqualToString:@""]) {
         
-        self.txtDentista.hidden = NO;
+        self.txtFuncionario.hidden = NO;
         self.txtHorario.frame = CGRectMake(self.txtHorario.frame.origin.x, initialY, self.txtHorario.frame.size.width, self.txtHorario.frame.size.height);
         NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"dd/MM/yyyy";
@@ -167,11 +164,11 @@
         if([dataSel compare: [NSDate date]] != NSOrderedDescending)
         {
             self.scPreferencia.enabled = NO;
-            self.txtDentista.enabled = NO;
+            self.txtFuncionario.enabled = NO;
             self.txtHorario.enabled = NO;
             self.txtData.text = @"";
             self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
-            self.txtDentista.text = @"";
+            self.txtFuncionario.text = @"";
             self.txtHorario.text = @"";
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:@"O agendamento precisa ser feito com um dia de antecedência" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
@@ -179,13 +176,11 @@
         else
         {
             self.scPreferencia.enabled = YES;
-            self.txtDentista.enabled = NO;
+            self.txtFuncionario.enabled = NO;
             self.txtHorario.enabled = NO;
             self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
-            self.txtDentista.text = @"";
+            self.txtFuncionario.text = @"";
             self.txtHorario.text = @"";
-            [dictConteudoDentistas removeAllObjects];
-            [dictConteudoHorarios removeAllObjects];
             [dictMapHorariosFuncionarios removeAllObjects];
         }
     }
@@ -193,34 +188,31 @@
 
 -(void) alteraPreferencia
 {
-    [dictConteudoDentistas removeAllObjects];
-    [dictConteudoHorarios removeAllObjects];
     [dictMapHorariosFuncionarios removeAllObjects];
     
-    self.txtDentista.hidden = NO;
+    self.txtFuncionario.hidden = NO;
     self.txtHorario.frame = CGRectMake(self.txtHorario.frame.origin.x, initialY, self.txtHorario.frame.size.width, self.txtHorario.frame.size.height);
     if (self.scPreferencia.selectedSegmentIndex == 0)
     {
-        [self listarDentistas];
+        [self listarFuncionarios];
     }
     else if (self.scPreferencia.selectedSegmentIndex == 1)
     {
-        self.txtHorario.frame = CGRectMake(self.txtHorario.frame.origin.x, self.txtDentista.frame.origin.y, self.txtHorario.frame.size.width, self.txtHorario.frame.size.height);
-        self.txtDentista.hidden = YES;
-        self.txtDentista.enabled = NO;
+        self.txtHorario.frame = CGRectMake(self.txtHorario.frame.origin.x, self.txtFuncionario.frame.origin.y, self.txtHorario.frame.size.width, self.txtHorario.frame.size.height);
+        self.txtFuncionario.hidden = YES;
+        self.txtFuncionario.enabled = NO;
         [self listarHorarios];
     } else {
-        self.txtDentista.enabled = NO;
+        self.txtFuncionario.enabled = NO;
     }
     self.txtHorario.enabled = NO;
-    self.txtDentista.text = @"";
+    self.txtFuncionario.text = @"";
     self.txtHorario.text = @"";
 }
 
--(void) alteraDentista
+-(void) alteraFuncionario
 {
-    [dictConteudoHorarios removeAllObjects];
-    [self listarHorariosDentista];
+    [self listarHorariosFuncionario];
     self.txtHorario.text = @"";
 }
 
@@ -241,8 +233,8 @@
     }
     else if (self.scPreferencia.selectedSegmentIndex == 0)
     {
-        if (self.txtDentista.text.length == 0){
-            [vcMensagemRetorno appendString:@"Dentista obrigatório \n\n"];
+        if (self.txtFuncionario.text.length == 0){
+            [vcMensagemRetorno appendString:@"Funcionário obrigatório \n\n"];
         }
     }
     
@@ -287,7 +279,7 @@
 #pragma mark - Métodos Request Delegate
 
 - (void)requestFailed:(ASIHTTPRequest *)request{
-    NSLog(@"Response %d ==> %@", request.responseStatusCode, [request responseString]);
+    NSLog(@"Response %d ==> %@", request.responseStatusCode, request.responseString);
     [UIView animateWithDuration:0.5
                      animations:^{carregandoTela.alpha = 0.0;}
                      completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
@@ -297,7 +289,7 @@
 }
 
 - (void)requestFinished:(ASIFormDataRequest *)request {
-    NSLog(@"Response %d ==> %@", request.responseStatusCode, [request responseString]);
+    NSLog(@"Response %d ==> %@", request.responseStatusCode, request.responseString);
     [UIView animateWithDuration:0.5
                      animations:^{carregandoTela.alpha = 0.0;}
                      completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
@@ -305,12 +297,7 @@
     
     if ([servicoAtual isEqualToString:SERVICO_LISTAR_SERVICOS]) {
         if (request.responseStatusCode == 200) {
-            NSArray *arrRetorno = (NSArray*)[request.responseData objectFromJSONData];
-            dictConteudoServicos = [[NSMutableDictionary alloc] init];
-            for (NSDictionary* dictServico in arrRetorno) {
-                [dictConteudoServicos setValue:[[dictServico valueForKey:@"nome"] capitalizedString] forKey:[dictServico valueForKey:@"id"]];
-            }
-            self.txtServico.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtServico andContent:dictConteudoServicos];
+            self.txtServico.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtServico andContent:[ServicoModel arrayOfModelsFromDictionaries:request.responseData.toJSON]];
             self.txtServico.enabled = YES;
         }
         else {
@@ -320,11 +307,10 @@
     }
     else if ([servicoAtual isEqualToString:SERVICO_LISTAR_HORARIOS]) {
         if (request.responseStatusCode == 200) {
-            NSDictionary *dictRetorno = (NSDictionary*)[request.responseData objectFromJSONData];
+            NSDictionary *dictRetorno = (NSDictionary*)request.responseData.toJSON;
             NSArray* arrHorarios = [dictRetorno valueForKey:@"horarios"];
             if (![arrHorarios isKindOfClass:[NSNull class]]) {
-                dictConteudoHorarios = [[NSMutableDictionary alloc] initWithObjects:arrHorarios forKeys:arrHorarios];
-                self.txtHorario.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtHorario andContent:dictConteudoHorarios];
+                self.txtHorario.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtHorario andContent:arrHorarios];
                 self.txtHorario.enabled = YES;
                 dictMapHorariosFuncionarios = [[NSMutableDictionary alloc] initWithDictionary:[dictRetorno valueForKey:@"horariosFuncionarios"]];
             }
@@ -342,34 +328,27 @@
             [alert show];
         }
     }
-    else if ([servicoAtual isEqualToString:[NSString stringWithFormat:SERVICO_LISTAR_DENTISTAS, self.txtServico.accessibilityValue]]) {
+    else if ([servicoAtual isEqualToString:[NSString stringWithFormat:SERVICO_LISTAR_FUNCIONARIOS, self.txtServico.accessibilityValue]]) {
         if (request.responseStatusCode == 200) {
-            NSArray *arrRetorno = (NSArray*)[request.responseData objectFromJSONData];
-            dictConteudoDentistas = [[NSMutableDictionary alloc] init];
-            for (NSDictionary* dictDentista in arrRetorno) {
-                [dictConteudoDentistas setValue:[[dictDentista valueForKeyPath:@"pessoa.nome"]  capitalizedString] forKey:[dictDentista valueForKeyPath:@"id"]];
-            }
-            self.txtDentista.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtDentista andContent:dictConteudoDentistas];
-            self.txtDentista.enabled = YES;
+            self.txtFuncionario.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtFuncionario andContent:[FuncionarioModel arrayOfModelsFromDictionaries:request.responseData.toJSON]];
+            self.txtFuncionario.enabled = YES;
         }
         else {
             self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
             [self alteraPreferencia];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os dentistas. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os profissionais. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }
-    else if ([servicoAtual isEqualToString:SERVICO_LISTAR_HORARIOS_DENTISTA]) {
+    else if ([servicoAtual isEqualToString:SERVICO_LISTAR_HORARIOS_FUNCIONARIO]) {
         if (request.responseStatusCode == 200) {
-            NSArray* arrHorarios = (NSArray*)[request.responseData objectFromJSONData];
-            dictConteudoHorarios = [[NSMutableDictionary alloc] initWithObjects:arrHorarios forKeys:arrHorarios];
-            self.txtHorario.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtHorario andContent:dictConteudoHorarios];
+            self.txtHorario.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtHorario andContent:request.responseData.toJSON];
             self.txtHorario.enabled = YES;
         }
         else {
             self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
             [self alteraPreferencia];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:@"O dentista não possui horários disponíveis para a data selecionada." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:@"O profissional não possui horários disponíveis para a data selecionada." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }

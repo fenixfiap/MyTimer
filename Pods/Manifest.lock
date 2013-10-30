@@ -1,0 +1,28 @@
+PODS:
+  - ASIHTTPRequest (1.8.1):
+    - ASIHTTPRequest/ASIWebPageRequest
+    - ASIHTTPRequest/CloudFiles
+    - ASIHTTPRequest/S3
+    - Reachability
+  - ASIHTTPRequest/ASIWebPageRequest (1.8.1):
+    - Reachability
+  - ASIHTTPRequest/CloudFiles (1.8.1):
+    - Reachability
+  - ASIHTTPRequest/S3 (1.8.1):
+    - Reachability
+  - ISO8601DateFormatter (0.7)
+  - JSONModel (0.9.3)
+  - Reachability (3.1.1)
+
+DEPENDENCIES:
+  - ASIHTTPRequest (~> 1.8.1)
+  - ISO8601DateFormatter (~> 0.7)
+  - JSONModel
+
+SPEC CHECKSUMS:
+  ASIHTTPRequest: 162783e0cd71bdd3ff1ceed0cd5fa9505e0116a8
+  ISO8601DateFormatter: 00944e437ea647f4244454ce8809d313861d08de
+  JSONModel: e7c302d0262ecf14342e633135d98d528bf444a8
+  Reachability: 2be6bc2fd2bd31d97f5db33e75e4b29c79e95883
+
+COCOAPODS: 0.26.2
