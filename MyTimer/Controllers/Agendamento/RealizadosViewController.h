@@ -17,11 +17,11 @@
 
 @interface RealizadosViewController : UIViewController <UIActionSheetDelegate, UITableViewDataSource>
 {
-    NSArray *arrAgendamentos;
+    NSArray* arrAgendamentos;
     UIRefreshControl* refresh;
 }
 
-@property (strong, nonatomic) IBOutlet UITableView *tbAgendamentos;
+@property (strong, nonatomic) IBOutlet UITableView* tbAgendamentos;
 
 - (IBAction)btnSair:(UIBarButtonItem *)sender;
 

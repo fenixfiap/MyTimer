@@ -63,7 +63,7 @@
     [self.view addSubview:carregandoTela];
     if ([self validaCampos]) {
         NSURL* url = [NSURL URLWithString:SERVICO_LOGAR];
-        ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+        ASIHTTPRequest* request = [ASIHTTPRequest requestWithURL:url];
         request.shouldPresentCredentialsBeforeChallenge = YES;
         [request addBasicAuthenticationHeaderWithUsername:self.txtLogin.text andPassword:self.txtSenha.text];
         request.defaultResponseEncoding = NSUTF8StringEncoding;
@@ -81,7 +81,7 @@
 
 -(BOOL)validaCampos
 {
-    NSMutableString *vcMensagemRetorno = [[NSMutableString alloc] init];
+    NSMutableString* vcMensagemRetorno = [[NSMutableString alloc] init];
     
     if ([self.txtLogin.text isEqualToString:@""]){
         [vcMensagemRetorno appendString:@"Login obrigatório \n\n"];
@@ -96,7 +96,7 @@
         [UIView animateWithDuration:0.5
                          animations:^{carregandoTela.alpha = 0.0;}
                          completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:vcMensagemRetorno delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:vcMensagemRetorno delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         return NO;
     }
@@ -112,11 +112,11 @@
     NSLog(@"Response %d ==> %@", request.responseStatusCode, request.responseString);
     [carregandoTela removeFromSuperview];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de conexão:" message:@"Não foi possível se conectar com o serviço. Verique sua conexão e tente novamente." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Erro de conexão:" message:@"Não foi possível se conectar com o serviço. Verique sua conexão e tente novamente." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
 }
 
-- (void)requestFinished:(ASIFormDataRequest *)request
+- (void)requestFinished:(ASIHTTPRequest *)request
 {
     NSLog(@"Response %d ==> %@", request.responseStatusCode, request.responseString);
     [carregandoTela removeFromSuperview];
@@ -134,12 +134,12 @@
     }
     else if (request.responseStatusCode == 500)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de login:" message:@"Usuário inativo. Entre em contato com a administração." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Erro de login:" message:@"Usuário inativo. Entre em contato com a administração." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de login:" message:@"Usuário e/ou senha inválidos." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Erro de login:" message:@"Usuário e/ou senha inválidos." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
 }

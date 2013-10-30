@@ -25,13 +25,13 @@
     float initialY;
 }
 
-@property (strong, nonatomic) IBOutlet UIScrollView *svTela;
-@property (strong, nonatomic) IBOutlet UITextField *txtServico;
-@property (strong, nonatomic) IBOutlet UITextField *txtData;
-@property (strong, nonatomic) IBOutlet UISegmentedControl *scPreferencia;
-@property (strong, nonatomic) IBOutlet UITextField *txtFuncionario;
-@property (strong, nonatomic) IBOutlet UITextField *txtHorario;
-@property (strong, nonatomic) IBOutlet UIButton *btnSalvar;
+@property (strong, nonatomic) IBOutlet UIScrollView* svTela;
+@property (strong, nonatomic) IBOutlet UITextField* txtServico;
+@property (strong, nonatomic) IBOutlet UITextField* txtData;
+@property (strong, nonatomic) IBOutlet UISegmentedControl* scPreferencia;
+@property (strong, nonatomic) IBOutlet UITextField* txtFuncionario;
+@property (strong, nonatomic) IBOutlet UITextField* txtHorario;
+@property (strong, nonatomic) IBOutlet UIButton* btnSalvar;
 
 - (IBAction)agendar:(UIButton *)sender;
 - (IBAction)cancelaNovo:(UIBarButtonItem *)sender;

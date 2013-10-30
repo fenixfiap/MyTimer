@@ -47,8 +47,8 @@
     if ([self validaCampos]) {
         CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
         ClienteModel* usuarioLogado = [crud getLogado];
-        NSURL *url = [NSURL URLWithString:SERVICO_AGENDAR];
-        ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+        NSURL* url = [NSURL URLWithString:SERVICO_AGENDAR];
+        ASIFormDataRequest* request = [ASIFormDataRequest requestWithURL:url];
         [request setRequestMethod:@"POST"];
         [request addPostValue:[NSString stringWithFormat:@"%@", self.txtServico.accessibilityValue] forKey:@"idServico"];
         [request addPostValue:usuarioLogado.pessoa.cpf forKey:@"cpfCliente"];
@@ -71,7 +71,7 @@
 
 - (IBAction)cancelaNovo:(UIBarButtonItem *)sender
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+    UIActionSheet* actionSheet = [[UIActionSheet alloc]
                                   initWithTitle:@"Deseja realmente cancelar o agendamento?"
                                   delegate:self
                                   cancelButtonTitle:@"Cancelar"
@@ -84,8 +84,8 @@
 {
     carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
     [self.view addSubview:carregandoTela];
-    NSURL *url = [NSURL URLWithString:SERVICO_LISTAR_SERVICOS];
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    NSURL* url = [NSURL URLWithString:SERVICO_LISTAR_SERVICOS];
+    ASIHTTPRequest* request = [ASIHTTPRequest requestWithURL:url];
     [request setRequestMethod:@"GET"];
     [request setShowAccurateProgress:YES];
     [request setUploadProgressDelegate:self];
@@ -98,8 +98,8 @@
 {
     carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
     [self.view addSubview:carregandoTela];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:SERVICO_LISTAR_FUNCIONARIOS, self.txtServico.accessibilityValue]];
-    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:SERVICO_LISTAR_FUNCIONARIOS, self.txtServico.accessibilityValue]];
+    ASIHTTPRequest* request = [ASIHTTPRequest requestWithURL:url];
     [request setRequestMethod:@"GET"];
     [request setShowAccurateProgress:YES];
     [request setUploadProgressDelegate:self];
@@ -111,8 +111,8 @@
 {
     carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
     [self.view addSubview:carregandoTela];
-    NSURL *url = [NSURL URLWithString:SERVICO_LISTAR_HORARIOS];
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    NSURL* url = [NSURL URLWithString:SERVICO_LISTAR_HORARIOS];
+    ASIFormDataRequest* request = [ASIFormDataRequest requestWithURL:url];
     [request setRequestMethod:@"POST"];
     [request addPostValue:self.txtData.text forKey:@"data"];
     [request addPostValue:self.txtServico.accessibilityValue forKey:@"idServico"];
@@ -125,8 +125,8 @@
 {
     carregandoTela = [[CustomActivityIndicatorView alloc] initWithView:self.view];
     [self.view addSubview:carregandoTela];
-    NSURL *url = [NSURL URLWithString:SERVICO_LISTAR_HORARIOS_FUNCIONARIO];
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    NSURL* url = [NSURL URLWithString:SERVICO_LISTAR_HORARIOS_FUNCIONARIO];
+    ASIFormDataRequest* request = [ASIFormDataRequest requestWithURL:url];
     [request setRequestMethod:@"POST"];
     [request addPostValue:self.txtData.text forKey:@"data"];
     [request addPostValue:self.txtServico.accessibilityValue forKey:@"idServico"];
@@ -170,7 +170,7 @@
             self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
             self.txtFuncionario.text = @"";
             self.txtHorario.text = @"";
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:@"O agendamento precisa ser feito com um dia de antecedência" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:@"O agendamento precisa ser feito com um dia de antecedência" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
         else
@@ -218,7 +218,7 @@
 
 -(BOOL)validaCampos
 {
-    NSMutableString *vcMensagemRetorno = [[NSMutableString alloc] init];
+    NSMutableString* vcMensagemRetorno = [[NSMutableString alloc] init];
     
     if (self.txtServico.text.length == 0){
         [vcMensagemRetorno appendString:@"Serviço obrigatório \n\n"];
@@ -248,7 +248,7 @@
         [UIView animateWithDuration:0.5
                          animations:^{carregandoTela.alpha = 0.0;}
                          completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:vcMensagemRetorno delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:vcMensagemRetorno delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
         return NO;
     }
@@ -283,17 +283,17 @@
     [UIView animateWithDuration:0.5
                      animations:^{carregandoTela.alpha = 0.0;}
                      completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de conexão:" message:@"Não foi possível se conectar com o serviço. Verique sua conexão e tente novamente." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Erro de conexão:" message:@"Não foi possível se conectar com o serviço. Verique sua conexão e tente novamente." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     alert.delegate = self;
     [alert show];
 }
 
-- (void)requestFinished:(ASIFormDataRequest *)request {
+- (void)requestFinished:(ASIHTTPRequest *)request {
     NSLog(@"Response %d ==> %@", request.responseStatusCode, request.responseString);
     [UIView animateWithDuration:0.5
                      animations:^{carregandoTela.alpha = 0.0;}
                      completion:^(BOOL finished){ [carregandoTela removeFromSuperview]; }];
-    NSString * servicoAtual = [NSString stringWithFormat:@"%@", request.url];
+    NSString* servicoAtual = [NSString stringWithFormat:@"%@", request.url];
     
     if ([servicoAtual isEqualToString:SERVICO_LISTAR_SERVICOS]) {
         if (request.responseStatusCode == 200) {
@@ -301,13 +301,13 @@
             self.txtServico.enabled = YES;
         }
         else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os serviços. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os serviços. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }
     else if ([servicoAtual isEqualToString:SERVICO_LISTAR_HORARIOS]) {
         if (request.responseStatusCode == 200) {
-            NSDictionary *dictRetorno = (NSDictionary*)request.responseData.toJSON;
+            NSDictionary* dictRetorno = (NSDictionary*)request.responseData.toJSON;
             NSArray* arrHorarios = [dictRetorno valueForKey:@"horarios"];
             if (![arrHorarios isKindOfClass:[NSNull class]]) {
                 self.txtHorario.inputView = [[CustomPicker alloc] initWithFrame:CGRectZero andTextField:self.txtHorario andContent:arrHorarios];
@@ -317,14 +317,14 @@
             else {
                 self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
                 [self alteraPreferencia];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:@"Não existe horários disponíveis para a data selecionada." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:@"Não existe horários disponíveis para a data selecionada." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                 [alert show];
             }
         }
         else {
             self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
             [self alteraPreferencia];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os horários. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os horários. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }
@@ -336,7 +336,7 @@
         else {
             self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
             [self alteraPreferencia];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os profissionais. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível listar os profissionais. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }
@@ -348,20 +348,20 @@
         else {
             self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
             [self alteraPreferencia];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:@"O profissional não possui horários disponíveis para a data selecionada." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Verificar:" message:@"O profissional não possui horários disponíveis para a data selecionada." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
         }
     }
     else if ([servicoAtual isEqualToString:SERVICO_AGENDAR]) {
         if (request.responseStatusCode == 200) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sucesso:" message:@"Agendamento realizado!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Sucesso:" message:@"Agendamento realizado!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             alert.delegate = self;
             [alert show];
         }
         else {
             self.scPreferencia.selectedSegmentIndex = UISegmentedControlNoSegment;
             [self alteraPreferencia];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível realizar o agendamento. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Erro:" message:@"Não foi possível realizar o agendamento. Tente novamente mais tarde." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [alert show];
             self.view.userInteractionEnabled = YES;
         }
