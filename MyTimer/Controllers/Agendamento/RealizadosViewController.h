@@ -10,15 +10,14 @@
 #import "AppDelegate.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
+#import "JSONKit.h"
 #import "Constantes.h"
 #import "CRUD.h"
-#import "AgendamentoModel.h"
-#import "NSData+JSON.h"
 
 @interface RealizadosViewController : UIViewController <UIActionSheetDelegate, UITableViewDataSource>
 {
-    NSArray *arrAgendamentos;
-    UIRefreshControl* refresh;
+    @private NSArray *arrAgendamentos;
+    @private UIRefreshControl* refresh;
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *tbAgendamentos;

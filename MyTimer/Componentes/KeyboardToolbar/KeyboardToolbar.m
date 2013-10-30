@@ -17,16 +17,16 @@
     
     if ((self = [super initWithFrame:frame])) {
         
-        UIBarButtonItem* btEspacamento = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemFlexibleSpace) target:nil action:nil];
+        UIBarButtonItem *btEspacamento = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemFlexibleSpace) target:nil action:nil];
         
-        UIBarButtonItem* btEscondeTeclado = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemDone) target:self action:@selector(btnDoneEscondeTeclado:)];
+        UIBarButtonItem *btEscondeTeclado = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemDone) target:self action:@selector(btnDoneEscondeTeclado:)];
         
         if (isNav) {
-            UIBarButtonItem* btAnterior = [[UIBarButtonItem alloc] initWithTitle:@"Anterior"
+            UIBarButtonItem *btAnterior = [[UIBarButtonItem alloc] initWithTitle:@"Anterior"
                                                                            style:UIBarButtonItemStyleBordered
                                                                           target:self
                                                                           action:@selector(FocoCampoAnterior:)];
-            UIBarButtonItem* btProximo = [[UIBarButtonItem alloc] initWithTitle:@"Próximo"
+            UIBarButtonItem *btProximo = [[UIBarButtonItem alloc] initWithTitle:@"Próximo"
                                                                           style:UIBarButtonItemStyleBordered
                                                                          target:self
                                                                          action:@selector(FocoCampoProximo:)];

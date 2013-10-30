@@ -10,8 +10,8 @@
 
 @interface CustomDatePicker : UIDatePicker
 {
-    UITextField* txtAssociado;
-    NSDateFormatter* formatter;
+    @private UITextField *txtAssociado;
+    @private NSDateFormatter *formatter;
 }
 
 - (id)initWithFrame:(CGRect)frame andTextField:(UITextField *)txt;

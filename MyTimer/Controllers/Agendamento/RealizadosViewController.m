@@ -50,8 +50,9 @@
 -(void)listaAgendamentos
 {
     CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
-    ClienteModel* usuarioLogado = [crud getLogado];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:SERVICO_LISTAR_AGENDAMENTOS, usuarioLogado.pessoa.cpf]];
+    NSArray* fetchedObjects = [crud listAll];
+    NSString* cpf = [fetchedObjects[0] valueForKey:@"cpf"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:SERVICO_LISTAR_AGENDAMENTOS, cpf]];
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setRequestMethod:@"GET"];
     [request setShowAccurateProgress:YES];
@@ -87,10 +88,11 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    NSDictionary* agendamento = [arrAgendamentos objectAtIndex:indexPath.row];
     @try {
-        AgendamentoModel* agendamento = [arrAgendamentos objectAtIndex:indexPath.row];
-        cell.textLabel.text = [NSString stringWithFormat:@"Serviço: %@ \nProfissional: %@",agendamento.servico.nome, [agendamento.funcionario.pessoa.nome isKindOfClass:NSNull.class] ? @"" : agendamento.funcionario.pessoa.nome];
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"Data: %@ Horário: %@ \nStatus: %@",agendamento.data, agendamento.horaInicio, agendamento.statusFormatado];
+        NSString* funcionario = [agendamento valueForKeyPath:@"funcionario.pessoa.nome"];
+        cell.textLabel.text = [NSString stringWithFormat:@"Serviço: %@ \nProfissional: %@",[agendamento valueForKeyPath:@"servico.nome"], [funcionario isKindOfClass:NSNull.class] ? @"" : funcionario];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Data: %@ \nStatus: %@",[agendamento valueForKey:@"data"],[agendamento valueForKey:@"statusFormatado"]];
     }
     @catch (NSException *exception) {
         cell.textLabel.text = @"Você não possui agendamentos.";
@@ -102,17 +104,19 @@
 #pragma mark - Métodos Request Delegate
 
 - (void)requestFailed:(ASIHTTPRequest *)request{
-    NSLog(@"Response %d ==> %@", request.responseStatusCode, request.responseString);
+    NSLog(@"Response %d ==> %@", request.responseStatusCode, [request responseString]);
     [refresh endRefreshing];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Erro de conexão:" message:@"Não foi possível se conectar com o serviço. Verique sua conexão e tente novamente." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     [alert show];
 }
 
 - (void)requestFinished:(ASIFormDataRequest *)request {
-    NSLog(@"Response %d ==> %@", request.responseStatusCode, request.responseString);
+    NSLog(@"Response %d ==> %@", request.responseStatusCode, [request responseString]);
     [refresh endRefreshing];
     if (request.responseStatusCode == 200) {
-        arrAgendamentos = [AgendamentoModel arrayOfModelsFromDictionaries:request.responseData.toJSON];
+        arrAgendamentos = (NSArray*)[request.responseData objectFromJSONData];
+        if (arrAgendamentos.count < 1)
+            arrAgendamentos = [[NSArray alloc] initWithObjects:@"nil",nil];
         [self.tbAgendamentos reloadData];
     }
     else {

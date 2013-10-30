@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AgendamentoModel.h"
 
 @interface CustomPicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate>
 {
-    UITextField* txtAssociado;
-    NSArray*  arrConteudo;
+    @private UITextField *txtAssociado;
+    @private NSDictionary *dictConteudo;
+    @private NSArray * arrOrdenado;
 }
 
-- (id)initWithFrame:(CGRect)frame andTextField:(UITextField *)txt andContent:(NSArray *)content;
+- (id)initWithFrame:(CGRect)frame andTextField:(UITextField *)txt andContent:(NSDictionary *)content;
 
 @end

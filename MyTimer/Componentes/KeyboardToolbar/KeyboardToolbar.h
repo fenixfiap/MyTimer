@@ -13,11 +13,11 @@
 @interface KeyboardToolbar : UIToolbar
 {
      id CampoFocoAtual;
-    UITapGestureRecognizer* gestureRecognizer;
+    UITapGestureRecognizer *gestureRecognizer;
     CGSize tamanhoOriginal;
 }
 
-@property (nonatomic,strong) UIScrollView* svTela;
+@property(nonatomic,strong)UIScrollView * svTela;
 
 -(id)initWithFrame:(CGRect)frame andNavigation:(BOOL)isNav;
 
