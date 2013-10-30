@@ -14,25 +14,22 @@
 #import "CustomDatePicker.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
-#import "JSONKit.h"
 #import "Constantes.h"
 #import "CRUD.h"
+#import "NSData+JSON.h"
 
 @interface NovoViewController : UIViewController <UIActionSheetDelegate, UIAlertViewDelegate>
 {
-    @private CustomActivityIndicatorView* carregandoTela;
-    @private NSMutableDictionary* dictConteudoServicos;
-    @private NSMutableDictionary* dictConteudoDentistas;
-    @private NSMutableDictionary* dictConteudoHorarios;
-    @private NSMutableDictionary* dictMapHorariosFuncionarios;
-    @private float initialY;
+    CustomActivityIndicatorView* carregandoTela;
+    NSMutableDictionary* dictMapHorariosFuncionarios;
+    float initialY;
 }
 
 @property (strong, nonatomic) IBOutlet UIScrollView *svTela;
 @property (strong, nonatomic) IBOutlet UITextField *txtServico;
 @property (strong, nonatomic) IBOutlet UITextField *txtData;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *scPreferencia;
-@property (strong, nonatomic) IBOutlet UITextField *txtDentista;
+@property (strong, nonatomic) IBOutlet UITextField *txtFuncionario;
 @property (strong, nonatomic) IBOutlet UITextField *txtHorario;
 @property (strong, nonatomic) IBOutlet UIButton *btnSalvar;
 

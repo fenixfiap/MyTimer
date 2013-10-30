@@ -8,17 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
+#import "ClienteModel.h"
 
 @interface CRUD : NSObject
 {
-    NSManagedObjectContext *context;
+    NSManagedObjectContext* context;
 }
 
 @property (strong, nonatomic, readonly) NSEntityDescription* entity;
 
 -(id) initWithEntity:(NSString*) entityName;
 -(void) removeAll;
--(NSArray*) listAll;
--(void) saveUser:(NSDictionary*) userData;
+-(ClienteModel*) getLogado;
+-(void) saveUser:(ClienteModel*) userData;
 
 @end
