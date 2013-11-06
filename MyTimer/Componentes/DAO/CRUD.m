@@ -21,6 +21,11 @@
     return self;
 }
 
++(CRUD *) CRUDWithEntity:(NSString*) entityName
+{
+    return [[CRUD alloc] initWithEntity:entityName];
+}
+
 -(void) removeAll
 {
     NSArray* fetchedObjects = [self listAll];

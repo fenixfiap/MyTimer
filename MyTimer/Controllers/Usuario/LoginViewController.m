@@ -24,7 +24,7 @@
 -(void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
+    CRUD* crud = [CRUD CRUDWithEntity:@"Usuario"];
     ClienteModel* usuarioLogado = [crud getLogado];
     if (usuarioLogado)
     {
@@ -126,7 +126,7 @@
         
         NSError* err = nil;
         ClienteModel* cliente = [[ClienteModel alloc] initWithDictionary:request.responseData.toJSON error:&err];
-        CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
+        CRUD* crud = [CRUD CRUDWithEntity:@"Usuario"];
         [crud saveUser:cliente];
         
         [[NSUserDefaults standardUserDefaults] setValue:self.txtLogin.text forKey:USER_INFO_ULTIMO_LOGADO];

@@ -21,5 +21,6 @@
 -(void) removeAll;
 -(ClienteModel*) getLogado;
 -(void) saveUser:(ClienteModel*) userData;
++(CRUD *) CRUDWithEntity:(NSString*) entityName;
 
 @end

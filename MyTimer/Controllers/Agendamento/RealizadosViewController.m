@@ -49,7 +49,7 @@
 
 -(void)listaAgendamentos
 {
-    CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
+    CRUD* crud = [CRUD CRUDWithEntity:@"Usuario"];
     ClienteModel* usuarioLogado = [crud getLogado];
     NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:SERVICO_LISTAR_AGENDAMENTOS, usuarioLogado.pessoa.cpf]];
     ASIHTTPRequest* request = [ASIHTTPRequest requestWithURL:url];
@@ -64,19 +64,15 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 0) {
-        CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
+    if (buttonIndex == 0)
+    {
+        CRUD* crud = [CRUD CRUDWithEntity:@"Usuario"];
         [crud removeAll];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
 #pragma mark - Métodos TableView DataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

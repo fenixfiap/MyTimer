@@ -45,7 +45,7 @@
     [self.view addSubview:carregandoTela];
     self.view.userInteractionEnabled = NO;
     if ([self validaCampos]) {
-        CRUD* crud = [[CRUD alloc] initWithEntity:@"Usuario"];
+        CRUD* crud = [CRUD CRUDWithEntity:@"Usuario"];
         ClienteModel* usuarioLogado = [crud getLogado];
         NSURL* url = [NSURL URLWithString:SERVICO_AGENDAR];
         ASIFormDataRequest* request = [ASIFormDataRequest requestWithURL:url];
